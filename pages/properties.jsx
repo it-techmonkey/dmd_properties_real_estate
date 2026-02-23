@@ -8,10 +8,7 @@ import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import { fetchProperties, fetchFilteredProperties, getTotalPropertyCount, cleanText } from '../lib/api';
 
-const ITEMS_PER_PAGE = 12; // 3x4 grid
-
-
-
+const ITEMS_PER_PAGE = 12;
 
 // Shared helper function for price formatting
 const formatPrice = (price) => {
