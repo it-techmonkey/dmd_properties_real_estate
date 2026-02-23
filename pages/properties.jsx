@@ -588,9 +588,8 @@ export default function PropertiesPage() {
         filters.sort_order = 'desc';
       }
       
-      // API mode
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-      const url = `${apiUrl}/api/projects?page=${page}&limit=12`;
+      // API mode — use local proxy to avoid CORS
+      const url = `/api/projects?page=${page}&limit=12`;
       
       // Build request body for filters (NOT pagination)
       const requestBody = {};
@@ -635,7 +634,7 @@ export default function PropertiesPage() {
   // Fetch all properties for map (without pagination, but with current filters)
   const fetchAllForMap = useCallback(async (search = '', type = 'all', sort = 'newest', devId = null, priceMin = '', priceMax = '', city = 'all') => {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      // Use local proxy to avoid CORS
       
       // Build request body with current filters
       const requestBody = {};
@@ -662,7 +661,7 @@ export default function PropertiesPage() {
         requestBody.sort_order = 'desc';
       }
       
-      const response = await fetch(`${apiUrl}/api/projects?page=1&limit=100`, {
+      const response = await fetch(`/api/projects?page=1&limit=100`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

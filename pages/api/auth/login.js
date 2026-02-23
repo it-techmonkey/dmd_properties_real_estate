@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
     // Find user by email
     const users = await sql`
-      SELECT id, email, name, password, role, phone, profile_image 
+      SELECT id, email, name, password, role, phone
       FROM users 
       WHERE email = ${email}
     `;
