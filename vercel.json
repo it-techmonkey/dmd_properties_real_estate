@@ -3,21 +3,6 @@
   "devCommand": "next dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "outputDirectory": ".next",
-  "env": {
-    "DATABASE_URL": {
-      "description": "PostgreSQL connection string from Neon",
-      "required": true
-    },
-    "JWT_SECRET": {
-      "description": "Secret key for JWT token generation (use: node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\")",
-      "required": true
-    },
-    "NEXT_PUBLIC_API_URL": {
-      "description": "Optional: External API URL (only needed during migration)",
-      "required": false
-    }
-  },
   "regions": ["iad1"],
   "functions": {
     "pages/api/**/*.js": {
