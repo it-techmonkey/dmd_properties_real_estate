@@ -10,6 +10,9 @@ import { fetchProperties, fetchFilteredProperties, getTotalPropertyCount, cleanT
 
 const ITEMS_PER_PAGE = 12; // 3x4 grid
 
+
+
+
 // Shared helper function for price formatting
 const formatPrice = (price) => {
   if (!price) return 'N/A';
