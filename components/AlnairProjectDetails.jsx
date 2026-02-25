@@ -6,21 +6,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getProjectDetails, parseProjectDescription } from '../lib/alnairService';
-import type { ProjectDetails } from '../lib/types/alnair';
+import { fetchProjectDetailsFromAlnair } from '../lib/api';
+import { parseProjectDescription } from '../lib/alnairService';
 
 interface ProjectDetailsPageProps {
+  /** Accepts either a slug string OR a numeric project ID */
   slug: string;
-  propertyName?: string;
-  propertySlug?: string;
 }
 
-export default function AlnairProjectDetailsPage({
-  slug,
-  propertyName = 'main',
-  propertySlug = 'main',
-}: ProjectDetailsPageProps) {
-  const [project, setProject] = useState<ProjectDetails | null>(null);
+export default function AlnairProjectDetailsPage({ slug }: ProjectDetailsPageProps) {
+  const [project, setProject] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [expandedDescription, setExpandedDescription] = useState(false);
@@ -29,8 +24,19 @@ export default function AlnairProjectDetailsPage({
     const loadProject = async () => {
       try {
         setLoading(true);
-        const data = await getProjectDetails(slug, propertyName, propertySlug);
+        // If slug looks like a number, fetch by ID; otherwise find by slug
+        const isId = /^\d+$/.test(slug);
+        let data = null;
+        if (isId) {
+          data = await fetchProjectDetailsFromAlnair(slug);
+        } else {
+          // Find by slug in the full list
+          const { fetchProjectsFromAlnair } = await import('../lib/api');
+          const all = await fetchProjectsFromAlnair();
+          data = all.find((p: any) => p.slug === slug) || null;
+        }
         setProject(data);
+        if (!data) setError('Project not found');
       } catch (err) {
         console.error('Failed to load project:', err);
         setError(err instanceof Error ? err.message : 'Failed to load project details');
@@ -40,7 +46,7 @@ export default function AlnairProjectDetailsPage({
     };
 
     loadProject();
-  }, [slug, propertyName, propertySlug]);
+  }, [slug]);
 
   if (loading) {
     return (

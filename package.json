@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fetch-alnair": "node scripts/fetch-alnair-data.js"
+    "fetch-alnair": "node scripts/fetch-alnair-data.js",
+    "fetch-descriptions": "node scripts/fetch-descriptions.js"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",

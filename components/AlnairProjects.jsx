@@ -6,8 +6,8 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { fetchProjectsFromAlnair } from '../lib/api';
 import {
-  findProjectsInDubai,
   projectToMapMarker,
   parseProjectDescription,
   getConstructionProgress,
@@ -279,12 +279,10 @@ export default function AlnairProjects() {
       try {
         setLoading(true);
         setError(null);
-        const response = await findProjectsInDubai({ limit: 12, forceRefresh: false });
-
-        if (response.data?.items) {
-          setProjects(response.data.items);
-          setMapMarkers(response.data.items.map(projectToMapMarker));
-        }
+        // Load from static all_data.json — no API call needed
+        const items = await fetchProjectsFromAlnair({ limit: 12 });
+        setProjects(items);
+        setMapMarkers(items.map(projectToMapMarker));
       } catch (err) {
         console.error('Failed to load projects:', err);
         setError(err instanceof Error ? err.message : 'Failed to load projects');

@@ -1,797 +1,12 @@
 {
-  "fetchedAt": "2026-02-25T13:00:08.285Z",
+  "fetchedAt": "2026-02-25T15:56:47.785Z",
   "count": 100,
   "projects": [
-    {
-      "id": 1864,
-      "city_id": 1,
-      "slug": "the-grandala",
-      "weight": -193,
-      "title": "The Grandala",
-      "type": "project",
-      "latitude": 25.21779419,
-      "longitude": 55.27401135,
-      "logo": {
-        "id": 130809,
-        "hash": "f121d135f39f03e48da5fe5e8ced5b0a",
-        "src": "https://files.alnair.ae/uploads/2024/1/04/72/0472d8b9bc7f3948b97143c7f0f101d1.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2024/1/04/72/0472d8b9bc7f3948b97143c7f0f101d1.jpg"
-      },
-      "cover": {
-        "id": 130551,
-        "hash": "7e5683c9cbee5038aef847702971fc1f",
-        "src": "https://files.alnair.ae/uploads/2024/1/44/4f/444f34a111f47f449c7be7cc1a5923f8.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2024/1/44/4f/444f34a111f47f449c7be7cc1a5923f8.jpg"
-      },
-      "construction_percent": "39.59",
-      "construction_inspection_date": "2026-06-30 00:00:00",
-      "construction_percent_out_of_plan": -37.49,
-      "agent_fee_value": "5.00",
-      "builder": "Palladium Development",
-      "catalogs": {
-        "project_badges": [
-          366
-        ],
-        "project_sales_status": [
-          5
-        ]
-      },
-      "district": {
-        "id": 168,
-        "title": "Dubai, Jumeirah Gardens"
-      },
-      "photos": [
-        {
-          "id": 130831,
-          "hash": "f47dd7723fd421d7b0f22bbbfe035dc3",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/1/93/a1/93a1888e061d609eb6f30bdd3a5b7cea.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2024/1/93/a1/93a1888e061d609eb6f30bdd3a5b7cea.jpg",
-          "size": 291880,
-          "src_video": null
-        }
-      ],
-      "statistics": {
-        "transactions": {
-          "110": 37,
-          "111": 34
-        },
-        "rents": null,
-        "total": {
-          "count": 4,
-          "price_from": 1120000,
-          "price_to": 2900000,
-          "price_m2_from": 14873,
-          "price_m2_to": 24353,
-          "units_count": 87,
-          "units_resale_count": 1,
-          "units_area_mt": "5129.77",
-          "units_max_floor": 8
-        },
-        "units": {
-          "110": {
-            "count": 1,
-            "price_from": 1120000,
-            "price_to": 1120000,
-            "price_m2_from": 24353,
-            "price_m2_to": 24353,
-            "area_from": 45.99,
-            "area_to": 45.99
-          },
-          "111": {
-            "count": 2,
-            "price_from": 1844000,
-            "price_to": 1844000,
-            "price_m2_from": 21641,
-            "price_m2_to": 21641,
-            "area_from": 85.21,
-            "area_to": 85.21
-          },
-          "112": {
-            "count": 1,
-            "price_from": 2900000,
-            "price_to": 2900000,
-            "price_m2_from": 14873,
-            "price_m2_to": 14873,
-            "area_from": 194.98,
-            "area_to": 194.98
-          }
-        }
-      }
-    },
-    {
-      "id": 5761,
-      "city_id": 1,
-      "slug": "6942beae3423b-azizi-venice-12",
-      "weight": -171,
-      "title": "Azizi Venice 12",
-      "type": "project",
-      "latitude": 24.835212956154,
-      "longitude": 55.138647334927,
-      "logo": {
-        "id": 521975,
-        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
-        "src": "https://files.alnair.ae/uploads/2025/12/65/15/6515730693152056c8be58541674461e.png",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/12/65/15/6515730693152056c8be58541674461e.png"
-      },
-      "cover": {
-        "id": 521980,
-        "hash": "8b1fb84271d790b34f9de35ed1aea92a",
-        "src": "https://files.alnair.ae/uploads/2025/12/31/17/31177fdc016013ec845fadc21e5e0afd.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/12/31/17/31177fdc016013ec845fadc21e5e0afd.jpg"
-      },
-      "construction_percent": "10.46",
-      "construction_inspection_date": "2027-09-25 11:11:34",
-      "construction_percent_out_of_plan": -29.63,
-      "agent_fee_value": "7.00",
-      "builder": "Azizi",
-      "catalogs": {
-        "project_badges": [
-          366
-        ],
-        "project_sales_status": [
-          5
-        ]
-      },
-      "district": {
-        "id": 249,
-        "title": "Dubai, Dubai South"
-      },
-      "photos": [],
-      "statistics": {
-        "transactions": {
-          "110": 62,
-          "111": 46,
-          "112": 3,
-          "113": 1
-        },
-        "rents": null,
-        "total": {
-          "count": 472,
-          "price_from": 785000,
-          "price_to": 15315000,
-          "price_m2_from": 16451,
-          "price_m2_to": 48394,
-          "units_count": 1428,
-          "units_resale_count": 0,
-          "units_area_mt": "92365.03",
-          "units_max_floor": 18
-        },
-        "units": {
-          "110": {
-            "count": 150,
-            "price_from": 785000,
-            "price_to": 785000,
-            "price_m2_from": 23280,
-            "price_m2_to": 23468,
-            "area_from": 33.45,
-            "area_to": 33.72
-          },
-          "111": {
-            "count": 141,
-            "price_from": 1230000,
-            "price_to": 1284000,
-            "price_m2_from": 16855,
-            "price_m2_to": 19944,
-            "area_from": 64.38,
-            "area_to": 76.18
-          },
-          "112": {
-            "count": 116,
-            "price_from": 2414000,
-            "price_to": 2529000,
-            "price_m2_from": 16557,
-            "price_m2_to": 23709,
-            "area_from": 106.67,
-            "area_to": 149.3
-          },
-          "113": {
-            "count": 44,
-            "price_from": 3156000,
-            "price_to": 3156000,
-            "price_m2_from": 16451,
-            "price_m2_to": 19501,
-            "area_from": 161.84,
-            "area_to": 191.84
-          },
-          "164": {
-            "count": 21,
-            "price_from": 3287000,
-            "price_to": 15315000,
-            "price_m2_from": 35194,
-            "price_m2_to": 48394,
-            "area_from": 72.93,
-            "area_to": 349.69
-          }
-        }
-      }
-    },
-    {
-      "id": 3624,
-      "city_id": 1,
-      "slug": "luz-ora-residences",
-      "weight": -168,
-      "title": "Luz Ora Residences",
-      "type": "project",
-      "latitude": 25.299637057687,
-      "longitude": 55.316626114236,
-      "logo": {
-        "id": 512664,
-        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
-        "src": "https://files.alnair.ae/uploads/2025/12/25/1e/251efec4a5d92a47b7340ebd5d2135b1.png",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/12/25/1e/251efec4a5d92a47b7340ebd5d2135b1.png"
-      },
-      "cover": {
-        "id": 512690,
-        "hash": "17c29fcd81010d022dddbdef7fd1ac7a",
-        "src": "https://files.alnair.ae/uploads/2025/12/75/12/7512adebba3a5358746bd9c6e2f78146.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/12/75/12/7512adebba3a5358746bd9c6e2f78146.jpg"
-      },
-      "construction_percent": "3.52",
-      "construction_inspection_date": "2027-08-31 00:00:00",
-      "construction_percent_out_of_plan": -45.44,
-      "agent_fee_value": "6.00",
-      "builder": "DIA Developments",
-      "catalogs": {
-        "project_badges": [
-          366
-        ],
-        "project_sales_status": [
-          5
-        ]
-      },
-      "district": {
-        "id": 330,
-        "title": "Dubai, Dubai Islands"
-      },
-      "photos": [
-        {
-          "id": 512709,
-          "hash": "4a47a0db6e60853dedfcfdf08a5ca249",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/4d/d2/4dd2cbaab590ea9df579ad1ccd9a48c4.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/4d/d2/4dd2cbaab590ea9df579ad1ccd9a48c4.png",
-          "size": 5829259,
-          "src_video": null
-        },
-        {
-          "id": 512710,
-          "hash": "fb5c81ed3a220004b71069645f112867",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/08/93/089365905b4edb02d75a6e3916c9f1f2.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/08/93/089365905b4edb02d75a6e3916c9f1f2.png",
-          "size": 5710281,
-          "src_video": null
-        },
-        {
-          "id": 512711,
-          "hash": "10fb15c77258a991b0028080a64fb42d",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/4c/46/4c46ff00c8d3de9c6eec0d8dd6e5b25d.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/4c/46/4c46ff00c8d3de9c6eec0d8dd6e5b25d.png",
-          "size": 4246555,
-          "src_video": null
-        },
-        {
-          "id": 512729,
-          "hash": "09dd8c2662b96ce14928333f055c5580",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/bd/69/bd69fdcaad9731564ca9c990bb356067.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/bd/69/bd69fdcaad9731564ca9c990bb356067.png",
-          "size": 5281195,
-          "src_video": null
-        }
-      ],
-      "statistics": {
-        "transactions": {
-          "111": 9,
-          "112": 6
-        },
-        "rents": null,
-        "total": {
-          "count": 34,
-          "price_from": 1820194,
-          "price_to": 8240000,
-          "price_m2_from": 15333,
-          "price_m2_to": 33940,
-          "units_count": 108,
-          "units_resale_count": 0,
-          "units_area_mt": "12559.35",
-          "units_max_floor": 8
-        },
-        "units": {
-          "111": {
-            "count": 13,
-            "price_from": 1820194,
-            "price_to": 2954114,
-            "price_m2_from": 17155,
-            "price_m2_to": 33940,
-            "area_from": 53.63,
-            "area_to": 172.2
-          },
-          "112": {
-            "count": 20,
-            "price_from": 2935141,
-            "price_to": 4171188,
-            "price_m2_from": 15333,
-            "price_m2_to": 27979,
-            "area_from": 121.04,
-            "area_to": 272.04
-          },
-          "114": {
-            "count": 1,
-            "price_from": 8240000,
-            "price_to": 8240000,
-            "price_m2_from": 30856,
-            "price_m2_to": 30856,
-            "area_from": 267.05,
-            "area_to": 267.05
-          }
-        }
-      }
-    },
-    {
-      "id": 5843,
-      "city_id": 1,
-      "slug": "697102a325136-azizi-venice-16",
-      "weight": -167,
-      "title": "Azizi Venice 16",
-      "type": "project",
-      "latitude": 24.839144058925,
-      "longitude": 55.134421798955,
-      "logo": {
-        "id": 548256,
-        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
-        "src": "https://files.alnair.ae/uploads/2026/1/b5/0e/b50e43039a6739cb067f8abc4a11ae7d.png",
-        "logo": "https://files.alnair.ae/uploads/logo/2026/1/b5/0e/b50e43039a6739cb067f8abc4a11ae7d.png"
-      },
-      "cover": {
-        "id": 548257,
-        "hash": "b67f32705e6fa103f8af81bf8d263ae9",
-        "src": "https://files.alnair.ae/uploads/2026/1/f1/f7/f1f7ff867e42f6659bdf527dc654c078.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2026/1/f1/f7/f1f7ff867e42f6659bdf527dc654c078.jpg"
-      },
-      "construction_percent": "0",
-      "construction_inspection_date": "2027-06-02 11:11:34",
-      "construction_percent_out_of_plan": null,
-      "agent_fee_value": "7.00",
-      "builder": "Azizi",
-      "catalogs": {
-        "project_badges": [
-          366
-        ],
-        "project_sales_status": [
-          5
-        ]
-      },
-      "district": {
-        "id": 249,
-        "title": "Dubai, Dubai South"
-      },
-      "photos": [
-        {
-          "id": 548260,
-          "hash": "e8592e31831b304fbe71969bc00351c1",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2026/1/b8/2a/b82a59a80b988334708d0f40902287b4.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2026/1/b8/2a/b82a59a80b988334708d0f40902287b4.jpg",
-          "size": 716912,
-          "src_video": null
-        },
-        {
-          "id": 548261,
-          "hash": "85da7c419140eb0995628120dfc36aa0",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2026/1/95/aa/95aafb5bcd18bd1a2acf52849bb95594.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2026/1/95/aa/95aafb5bcd18bd1a2acf52849bb95594.jpg",
-          "size": 998761,
-          "src_video": null
-        },
-        {
-          "id": 548262,
-          "hash": "4990e3f50eae5cace6bc17a48c16e102",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2026/1/00/b1/00b11d02089f5ab82b5d1fe1586585db.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2026/1/00/b1/00b11d02089f5ab82b5d1fe1586585db.jpg",
-          "size": 867147,
-          "src_video": null
-        },
-        {
-          "id": 548263,
-          "hash": "d10b28a5d6acd8267b8eb284c8f4a02d",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2026/1/0e/b7/0eb7502d41510e9275ef493d7bb4dce4.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2026/1/0e/b7/0eb7502d41510e9275ef493d7bb4dce4.jpg",
-          "size": 838104,
-          "src_video": null
-        }
-      ],
-      "statistics": {
-        "transactions": {
-          "110": 8
-        },
-        "rents": null,
-        "total": {
-          "count": 271,
-          "price_from": 755000,
-          "price_to": 3586000,
-          "price_m2_from": 18932,
-          "price_m2_to": 25559,
-          "units_count": 1055,
-          "units_resale_count": 0,
-          "units_area_mt": "67787.86",
-          "units_max_floor": 14
-        },
-        "units": {
-          "110": {
-            "count": 156,
-            "price_from": 755000,
-            "price_to": 912000,
-            "price_m2_from": 22228,
-            "price_m2_to": 25559,
-            "area_from": 29.54,
-            "area_to": 39.86
-          },
-          "112": {
-            "count": 83,
-            "price_from": 2222000,
-            "price_to": 2321000,
-            "price_m2_from": 20278,
-            "price_m2_to": 21624,
-            "area_from": 103.54,
-            "area_to": 112.88
-          },
-          "113": {
-            "count": 32,
-            "price_from": 3387000,
-            "price_to": 3586000,
-            "price_m2_from": 18932,
-            "price_m2_to": 22642,
-            "area_from": 157.01,
-            "area_to": 181.02
-          }
-        }
-      }
-    },
-    {
-      "id": 5779,
-      "city_id": 1,
-      "slug": "695258c542b00-azizi-venice-13",
-      "weight": -165,
-      "title": "Azizi Venice 13",
-      "type": "project",
-      "latitude": 24.835242163162,
-      "longitude": 55.137425940575,
-      "logo": {
-        "id": 533960,
-        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
-        "src": "https://files.alnair.ae/uploads/2025/12/64/7a/647a9a6598626081f598ee9f81e4b07a.png",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/12/64/7a/647a9a6598626081f598ee9f81e4b07a.png"
-      },
-      "cover": {
-        "id": 533961,
-        "hash": "f8f6c0c4d91fdd02c8d778e4d3c677a5",
-        "src": "https://files.alnair.ae/uploads/2025/12/48/fd/48fdac65200f3f500af8427a63a26879.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/12/48/fd/48fdac65200f3f500af8427a63a26879.jpg"
-      },
-      "construction_percent": "27.06",
-      "construction_inspection_date": "2027-09-16 11:11:34",
-      "construction_percent_out_of_plan": -13.85,
-      "agent_fee_value": "7.00",
-      "builder": "Azizi",
-      "catalogs": {
-        "project_badges": [
-          366
-        ],
-        "project_sales_status": [
-          5
-        ]
-      },
-      "district": {
-        "id": 249,
-        "title": "Dubai, Dubai South"
-      },
-      "photos": [
-        {
-          "id": 534029,
-          "hash": "5d70fc40044038b43e19212d4bf72f18",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/98/60/9860c303bfc7bde7d8e7e67f29a3a85e.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/98/60/9860c303bfc7bde7d8e7e67f29a3a85e.jpg",
-          "size": 854614,
-          "src_video": null
-        },
-        {
-          "id": 534011,
-          "hash": "52d4c4d830a7846d9e0e65bff4d44777",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/a8/0b/a80b901c1f843a2a3dd53517c90d1018.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/a8/0b/a80b901c1f843a2a3dd53517c90d1018.png",
-          "size": 7249823,
-          "src_video": null
-        }
-      ],
-      "statistics": {
-        "transactions": {
-          "110": 16,
-          "111": 10
-        },
-        "rents": null,
-        "total": {
-          "count": 717,
-          "price_from": 710000,
-          "price_to": 11690000,
-          "price_m2_from": 16052,
-          "price_m2_to": 45868,
-          "units_count": 1888,
-          "units_resale_count": 0,
-          "units_area_mt": "126389.85",
-          "units_max_floor": 18
-        },
-        "units": {
-          "110": {
-            "count": 5,
-            "price_from": 710000,
-            "price_to": 710000,
-            "price_m2_from": 20056,
-            "price_m2_to": 20216,
-            "area_from": 35.12,
-            "area_to": 35.4
-          },
-          "111": {
-            "count": 285,
-            "price_from": 1230000,
-            "price_to": 1338000,
-            "price_m2_from": 16052,
-            "price_m2_to": 21626,
-            "area_from": 61.26,
-            "area_to": 79.99
-          },
-          "112": {
-            "count": 319,
-            "price_from": 2414000,
-            "price_to": 2529000,
-            "price_m2_from": 21351,
-            "price_m2_to": 24126,
-            "area_from": 100.06,
-            "area_to": 113.06
-          },
-          "113": {
-            "count": 88,
-            "price_from": 3156000,
-            "price_to": 3156000,
-            "price_m2_from": 20956,
-            "price_m2_to": 21166,
-            "area_from": 149.11,
-            "area_to": 150.6
-          },
-          "164": {
-            "count": 20,
-            "price_from": 4456000,
-            "price_to": 11690000,
-            "price_m2_from": 34028,
-            "price_m2_to": 45868,
-            "area_from": 99.19,
-            "area_to": 287.44
-          }
-        }
-      }
-    },
-    {
-      "id": 2001,
-      "city_id": 6,
-      "slug": "the-momentum-district",
-      "weight": -161,
-      "title": "The Momentum District",
-      "type": "project",
-      "latitude": 8.03702389,
-      "longitude": 98.29311199,
-      "logo": {
-        "id": 429024,
-        "hash": "44033a95caabda15f82aae57dc9cfedc",
-        "src": "https://files.alnair.ae/uploads/2025/8/c6/dc/c6dcea44d6d96911ef7c086001b16af2.png",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/8/c6/dc/c6dcea44d6d96911ef7c086001b16af2.png"
-      },
-      "cover": {
-        "id": 146464,
-        "hash": "926ea7e437c83999067b5aa301757b1b",
-        "src": "https://files.alnair.ae/uploads/2024/3/bd/9f/bd9ff4a748fc7fa150d45eb408042df4.png",
-        "logo": "https://files.alnair.ae/uploads/logo/2024/3/bd/9f/bd9ff4a748fc7fa150d45eb408042df4.png"
-      },
-      "construction_percent": "20.00",
-      "construction_inspection_date": "2027-09-30 00:00:00",
-      "construction_percent_out_of_plan": -7.21,
-      "agent_fee_value": "7.00",
-      "builder": "Serene Innovations & Developments",
-      "catalogs": {
-        "project_badges": [
-          366
-        ],
-        "project_sales_status": [
-          5
-        ]
-      },
-      "district": {
-        "id": 571,
-        "title": "Phuket, Layan"
-      },
-      "photos": [
-        {
-          "id": 146592,
-          "hash": "2e849f7606d3829fb3e6f5570355509c",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/11/b3/11b343246bad7afe31a4a810b1b9c727.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/11/b3/11b343246bad7afe31a4a810b1b9c727.png",
-          "size": 4368399,
-          "src_video": null
-        },
-        {
-          "id": 146557,
-          "hash": "9dd1f817210fa8ec90c1a583bc4a787b",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/ad/52/ad5259ce84608644c69c298001cec839.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/ad/52/ad5259ce84608644c69c298001cec839.png",
-          "size": 4265472,
-          "src_video": null
-        },
-        {
-          "id": 146558,
-          "hash": "bb2fcf428954cbbf50d212afb98efccc",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/83/a4/83a4829a10f3e908e094b4e99e52c63d.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/83/a4/83a4829a10f3e908e094b4e99e52c63d.png",
-          "size": 4170132,
-          "src_video": null
-        },
-        {
-          "id": 146560,
-          "hash": "30a47daf6b0ee4748a03e2d866678e8a",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/7d/ca/7dca323e58e100dc398f1860343071ee.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/7d/ca/7dca323e58e100dc398f1860343071ee.png",
-          "size": 3941211,
-          "src_video": null
-        },
-        {
-          "id": 146562,
-          "hash": "0af631b2d364aa5214808131909638cf",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/3a/d2/3ad21d7869b37a0176d252604478b760.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/3a/d2/3ad21d7869b37a0176d252604478b760.png",
-          "size": 4292571,
-          "src_video": null
-        },
-        {
-          "id": 146586,
-          "hash": "baf87a0383254208240458653f908ecd",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/53/cc/53cc44319b92ea7817f34f405207f248.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/53/cc/53cc44319b92ea7817f34f405207f248.png",
-          "size": 3263379,
-          "src_video": null
-        }
-      ],
-      "statistics": {
-        "transactions": null,
-        "rents": null,
-        "total": {
-          "count": 92,
-          "price_from": 5112000,
-          "price_to": 19692000,
-          "price_m2_from": 138889,
-          "price_m2_to": 159389,
-          "units_count": 376,
-          "units_resale_count": 1,
-          "units_area_mt": "13789.00",
-          "units_max_floor": 7
-        },
-        "units": {
-          "110": {
-            "count": 75,
-            "price_from": 5112000,
-            "price_to": 6348000,
-            "price_m2_from": 142000,
-            "price_m2_to": 154778,
-            "area_from": 36,
-            "area_to": 44
-          },
-          "111": {
-            "count": 5,
-            "price_from": 7500000,
-            "price_to": 9472000,
-            "price_m2_from": 138889,
-            "price_m2_to": 153961,
-            "area_from": 51,
-            "area_to": 66
-          },
-          "112": {
-            "count": 12,
-            "price_from": 10224000,
-            "price_to": 19692000,
-            "price_m2_from": 142000,
-            "price_m2_to": 159389,
-            "area_from": 72,
-            "area_to": 124
-          }
-        }
-      }
-    },
-    {
-      "id": 5828,
-      "city_id": 1,
-      "slug": "696a4bc1289b1-azizi-venice-15",
-      "weight": -145,
-      "title": "Azizi Venice 15",
-      "type": "project",
-      "latitude": 24.837513211814,
-      "longitude": 55.135641515951,
-      "logo": {
-        "id": 545138,
-        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
-        "src": "https://files.alnair.ae/uploads/2026/1/01/6a/016a875f543e8866a405b42aab94e757.png",
-        "logo": "https://files.alnair.ae/uploads/logo/2026/1/01/6a/016a875f543e8866a405b42aab94e757.png"
-      },
-      "cover": {
-        "id": 545169,
-        "hash": "dbc191bd7869c08954fe4f8779de9cbf",
-        "src": "https://files.alnair.ae/uploads/2026/1/6b/05/6b05462a9ad60161072224d46b8704c7.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2026/1/6b/05/6b05462a9ad60161072224d46b8704c7.jpg"
-      },
-      "construction_percent": "0",
-      "construction_inspection_date": "2027-05-30 11:11:34",
-      "construction_percent_out_of_plan": null,
-      "agent_fee_value": "7.00",
-      "builder": "Azizi",
-      "catalogs": {
-        "project_badges": [
-          366
-        ],
-        "project_sales_status": [
-          5
-        ]
-      },
-      "district": {
-        "id": 249,
-        "title": "Dubai, Dubai South"
-      },
-      "photos": [],
-      "statistics": {
-        "transactions": {
-          "110": 13,
-          "111": 5,
-          "112": 4
-        },
-        "rents": null,
-        "total": {
-          "count": 247,
-          "price_from": 849000,
-          "price_to": 3414000,
-          "price_m2_from": 21304,
-          "price_m2_to": 25819,
-          "units_count": 1855,
-          "units_resale_count": 0,
-          "units_area_mt": "116854.31",
-          "units_max_floor": 17
-        },
-        "units": {
-          "110": {
-            "count": 42,
-            "price_from": 849000,
-            "price_to": 917000,
-            "price_m2_from": 23983,
-            "price_m2_to": 25819,
-            "area_from": 35.3,
-            "area_to": 36.14
-          },
-          "112": {
-            "count": 128,
-            "price_from": 2284000,
-            "price_to": 2489000,
-            "price_m2_from": 21304,
-            "price_m2_to": 23099,
-            "area_from": 106.84,
-            "area_to": 107.77
-          },
-          "113": {
-            "count": 77,
-            "price_from": 3338000,
-            "price_to": 3414000,
-            "price_m2_from": 21414,
-            "price_m2_to": 22183,
-            "area_from": 152.64,
-            "area_to": 157.28
-          }
-        }
-      }
-    },
     {
       "id": 1573,
       "city_id": 1,
       "slug": "azizi-venice",
-      "weight": -143,
+      "weight": -196,
       "title": "Azizi Venice (1-11)",
       "type": "project",
       "latitude": 24.838212,
@@ -967,31 +182,582 @@
       }
     },
     {
-      "id": 3533,
+      "id": 2587,
       "city_id": 1,
-      "slug": "capital-horizon-terraces",
-      "weight": -140,
-      "title": "Capital Horizon Terraces",
+      "slug": "amber-by-enso",
+      "weight": -184,
+      "title": "Amber by Enso",
       "type": "project",
-      "latitude": 25.298985946291,
-      "longitude": 55.316396802664,
+      "latitude": 25.224558152456,
+      "longitude": 55.27935650272,
       "logo": {
-        "id": 405606,
-        "hash": "1e4e037c99ef8f23649f4ae443b8fb38",
-        "src": "https://files.alnair.ae/uploads/2025/7/69/ae/69ae40160c30c713e2680ebc9c4c4fd4.png",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/7/69/ae/69ae40160c30c713e2680ebc9c4c4fd4.png"
+        "id": 213235,
+        "hash": "a7c644f82dbde093ca426058deaeb9ab",
+        "src": "https://files.alnair.ae/uploads/2024/8/b2/bf/b2bf15b8992305de5310c70d1e9048bb.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2024/8/b2/bf/b2bf15b8992305de5310c70d1e9048bb.jpg"
       },
       "cover": {
-        "id": 405605,
-        "hash": "7e4018813b77945925f5f87de0afdc70",
-        "src": "https://files.alnair.ae/uploads/2025/7/62/b2/62b21ac14c084d79cc8dab08259c690e.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/7/62/b2/62b21ac14c084d79cc8dab08259c690e.jpg"
+        "id": 404761,
+        "hash": "352f753f01a31898d90ca94766ca6760",
+        "src": "https://files.alnair.ae/uploads/2025/7/56/a2/56a25461e08b5ab6a085bcf8a7789da9.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/7/56/a2/56a25461e08b5ab6a085bcf8a7789da9.jpg"
       },
-      "construction_percent": "15.00",
+      "construction_percent": "2.13",
       "construction_inspection_date": "2026-12-30 00:00:00",
-      "construction_percent_out_of_plan": -29.87,
+      "construction_percent_out_of_plan": -55.99,
+      "agent_fee_value": "6.00",
+      "builder": "ENSO",
+      "catalogs": {
+        "project_badges": [
+          366
+        ],
+        "project_sales_status": [
+          5
+        ]
+      },
+      "district": {
+        "id": 168,
+        "title": "Dubai, Jumeirah Gardens"
+      },
+      "photos": [
+        {
+          "id": 213238,
+          "hash": "4877579b551c6fe1bbb91af474db160c",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/8/1a/b6/1ab683947fe031e0995e4bca43a13402.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2024/8/1a/b6/1ab683947fe031e0995e4bca43a13402.jpg",
+          "size": 1135238,
+          "src_video": null
+        },
+        {
+          "id": 497295,
+          "hash": "e042a0a6a6c3461726fc2dbdff7436bc",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/11/05/af/05aff3fa53d43daa644be127bad1b43d.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/11/05/af/05aff3fa53d43daa644be127bad1b43d.jpg",
+          "size": 1630665,
+          "src_video": null
+        },
+        {
+          "id": 497296,
+          "hash": "6ff570b7938ddbd3e5275cb112b8327f",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/11/b8/79/b87934fae314156186e2ca21ab4b2a96.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/11/b8/79/b87934fae314156186e2ca21ab4b2a96.jpg",
+          "size": 1424901,
+          "src_video": null
+        },
+        {
+          "id": 497297,
+          "hash": "28badd9e398bebf1f0f07c3ebd0c59f7",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/11/e6/b0/e6b0588dba2a9d12149073ef82ce72b6.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/11/e6/b0/e6b0588dba2a9d12149073ef82ce72b6.jpg",
+          "size": 644278,
+          "src_video": null
+        }
+      ],
+      "statistics": {
+        "transactions": {
+          "110": 10,
+          "111": 14,
+          "112": 1
+        },
+        "rents": null,
+        "total": {
+          "count": 18,
+          "price_from": 1520000,
+          "price_to": 2670000,
+          "price_m2_from": 20000,
+          "price_m2_to": 26357,
+          "units_count": 71,
+          "units_resale_count": 0,
+          "units_area_mt": "5243.66",
+          "units_max_floor": 9
+        },
+        "units": {
+          "110": {
+            "count": 1,
+            "price_from": 1520000,
+            "price_to": 1520000,
+            "price_m2_from": 20633,
+            "price_m2_to": 20633,
+            "area_from": 73.67,
+            "area_to": 73.67
+          },
+          "111": {
+            "count": 17,
+            "price_from": 1768000,
+            "price_to": 2670000,
+            "price_m2_from": 20000,
+            "price_m2_to": 26357,
+            "area_from": 67.08,
+            "area_to": 133.5
+          }
+        }
+      }
+    },
+    {
+      "id": 5779,
+      "city_id": 1,
+      "slug": "695258c542b00-azizi-venice-13",
+      "weight": -166,
+      "title": "Azizi Venice 13",
+      "type": "project",
+      "latitude": 24.835242163162,
+      "longitude": 55.137425940575,
+      "logo": {
+        "id": 533960,
+        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
+        "src": "https://files.alnair.ae/uploads/2025/12/64/7a/647a9a6598626081f598ee9f81e4b07a.png",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/12/64/7a/647a9a6598626081f598ee9f81e4b07a.png"
+      },
+      "cover": {
+        "id": 533961,
+        "hash": "f8f6c0c4d91fdd02c8d778e4d3c677a5",
+        "src": "https://files.alnair.ae/uploads/2025/12/48/fd/48fdac65200f3f500af8427a63a26879.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/12/48/fd/48fdac65200f3f500af8427a63a26879.jpg"
+      },
+      "construction_percent": "27.06",
+      "construction_inspection_date": "2027-09-16 11:11:34",
+      "construction_percent_out_of_plan": -13.85,
       "agent_fee_value": "7.00",
-      "builder": "Cirrera Development",
+      "builder": "Azizi",
+      "catalogs": {
+        "project_badges": [
+          366
+        ],
+        "project_sales_status": [
+          5
+        ]
+      },
+      "district": {
+        "id": 249,
+        "title": "Dubai, Dubai South"
+      },
+      "photos": [
+        {
+          "id": 534029,
+          "hash": "5d70fc40044038b43e19212d4bf72f18",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/98/60/9860c303bfc7bde7d8e7e67f29a3a85e.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/98/60/9860c303bfc7bde7d8e7e67f29a3a85e.jpg",
+          "size": 854614,
+          "src_video": null
+        },
+        {
+          "id": 534011,
+          "hash": "52d4c4d830a7846d9e0e65bff4d44777",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/a8/0b/a80b901c1f843a2a3dd53517c90d1018.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/a8/0b/a80b901c1f843a2a3dd53517c90d1018.png",
+          "size": 7249823,
+          "src_video": null
+        }
+      ],
+      "statistics": {
+        "transactions": {
+          "110": 16,
+          "111": 10
+        },
+        "rents": null,
+        "total": {
+          "count": 717,
+          "price_from": 710000,
+          "price_to": 11690000,
+          "price_m2_from": 16052,
+          "price_m2_to": 45868,
+          "units_count": 1888,
+          "units_resale_count": 0,
+          "units_area_mt": "126389.85",
+          "units_max_floor": 18
+        },
+        "units": {
+          "110": {
+            "count": 5,
+            "price_from": 710000,
+            "price_to": 710000,
+            "price_m2_from": 20056,
+            "price_m2_to": 20216,
+            "area_from": 35.12,
+            "area_to": 35.4
+          },
+          "111": {
+            "count": 285,
+            "price_from": 1230000,
+            "price_to": 1338000,
+            "price_m2_from": 16052,
+            "price_m2_to": 21626,
+            "area_from": 61.26,
+            "area_to": 79.99
+          },
+          "112": {
+            "count": 319,
+            "price_from": 2414000,
+            "price_to": 2529000,
+            "price_m2_from": 21351,
+            "price_m2_to": 24126,
+            "area_from": 100.06,
+            "area_to": 113.06
+          },
+          "113": {
+            "count": 88,
+            "price_from": 3156000,
+            "price_to": 3156000,
+            "price_m2_from": 20956,
+            "price_m2_to": 21166,
+            "area_from": 149.11,
+            "area_to": 150.6
+          },
+          "164": {
+            "count": 20,
+            "price_from": 4456000,
+            "price_to": 11690000,
+            "price_m2_from": 34028,
+            "price_m2_to": 45868,
+            "area_from": 99.19,
+            "area_to": 287.44
+          }
+        }
+      }
+    },
+    {
+      "id": 5828,
+      "city_id": 1,
+      "slug": "696a4bc1289b1-azizi-venice-15",
+      "weight": -156,
+      "title": "Azizi Venice 15",
+      "type": "project",
+      "latitude": 24.837513211814,
+      "longitude": 55.135641515951,
+      "logo": {
+        "id": 545138,
+        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
+        "src": "https://files.alnair.ae/uploads/2026/1/01/6a/016a875f543e8866a405b42aab94e757.png",
+        "logo": "https://files.alnair.ae/uploads/logo/2026/1/01/6a/016a875f543e8866a405b42aab94e757.png"
+      },
+      "cover": {
+        "id": 545169,
+        "hash": "dbc191bd7869c08954fe4f8779de9cbf",
+        "src": "https://files.alnair.ae/uploads/2026/1/6b/05/6b05462a9ad60161072224d46b8704c7.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2026/1/6b/05/6b05462a9ad60161072224d46b8704c7.jpg"
+      },
+      "construction_percent": "0",
+      "construction_inspection_date": "2027-05-30 11:11:34",
+      "construction_percent_out_of_plan": null,
+      "agent_fee_value": "7.00",
+      "builder": "Azizi",
+      "catalogs": {
+        "project_badges": [
+          366
+        ],
+        "project_sales_status": [
+          5
+        ]
+      },
+      "district": {
+        "id": 249,
+        "title": "Dubai, Dubai South"
+      },
+      "photos": [],
+      "statistics": {
+        "transactions": {
+          "110": 13,
+          "111": 5,
+          "112": 4
+        },
+        "rents": null,
+        "total": {
+          "count": 247,
+          "price_from": 849000,
+          "price_to": 3414000,
+          "price_m2_from": 21304,
+          "price_m2_to": 25819,
+          "units_count": 1855,
+          "units_resale_count": 0,
+          "units_area_mt": "116854.31",
+          "units_max_floor": 17
+        },
+        "units": {
+          "110": {
+            "count": 42,
+            "price_from": 849000,
+            "price_to": 917000,
+            "price_m2_from": 23983,
+            "price_m2_to": 25819,
+            "area_from": 35.3,
+            "area_to": 36.14
+          },
+          "112": {
+            "count": 128,
+            "price_from": 2284000,
+            "price_to": 2489000,
+            "price_m2_from": 21304,
+            "price_m2_to": 23099,
+            "area_from": 106.84,
+            "area_to": 107.77
+          },
+          "113": {
+            "count": 77,
+            "price_from": 3338000,
+            "price_to": 3414000,
+            "price_m2_from": 21414,
+            "price_m2_to": 22183,
+            "area_from": 152.64,
+            "area_to": 157.28
+          }
+        }
+      }
+    },
+    {
+      "id": 1864,
+      "city_id": 1,
+      "slug": "the-grandala",
+      "weight": -151,
+      "title": "The Grandala",
+      "type": "project",
+      "latitude": 25.21779419,
+      "longitude": 55.27401135,
+      "logo": {
+        "id": 130809,
+        "hash": "f121d135f39f03e48da5fe5e8ced5b0a",
+        "src": "https://files.alnair.ae/uploads/2024/1/04/72/0472d8b9bc7f3948b97143c7f0f101d1.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2024/1/04/72/0472d8b9bc7f3948b97143c7f0f101d1.jpg"
+      },
+      "cover": {
+        "id": 130551,
+        "hash": "7e5683c9cbee5038aef847702971fc1f",
+        "src": "https://files.alnair.ae/uploads/2024/1/44/4f/444f34a111f47f449c7be7cc1a5923f8.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2024/1/44/4f/444f34a111f47f449c7be7cc1a5923f8.jpg"
+      },
+      "construction_percent": "39.59",
+      "construction_inspection_date": "2026-06-30 00:00:00",
+      "construction_percent_out_of_plan": -37.49,
+      "agent_fee_value": "5.00",
+      "builder": "Palladium Development",
+      "catalogs": {
+        "project_badges": [
+          366
+        ],
+        "project_sales_status": [
+          5
+        ]
+      },
+      "district": {
+        "id": 168,
+        "title": "Dubai, Jumeirah Gardens"
+      },
+      "photos": [
+        {
+          "id": 130831,
+          "hash": "f47dd7723fd421d7b0f22bbbfe035dc3",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/1/93/a1/93a1888e061d609eb6f30bdd3a5b7cea.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2024/1/93/a1/93a1888e061d609eb6f30bdd3a5b7cea.jpg",
+          "size": 291880,
+          "src_video": null
+        }
+      ],
+      "statistics": {
+        "transactions": {
+          "110": 37,
+          "111": 34
+        },
+        "rents": null,
+        "total": {
+          "count": 4,
+          "price_from": 1120000,
+          "price_to": 2900000,
+          "price_m2_from": 14873,
+          "price_m2_to": 24353,
+          "units_count": 87,
+          "units_resale_count": 1,
+          "units_area_mt": "5129.77",
+          "units_max_floor": 8
+        },
+        "units": {
+          "110": {
+            "count": 1,
+            "price_from": 1120000,
+            "price_to": 1120000,
+            "price_m2_from": 24353,
+            "price_m2_to": 24353,
+            "area_from": 45.99,
+            "area_to": 45.99
+          },
+          "111": {
+            "count": 2,
+            "price_from": 1844000,
+            "price_to": 1844000,
+            "price_m2_from": 21641,
+            "price_m2_to": 21641,
+            "area_from": 85.21,
+            "area_to": 85.21
+          },
+          "112": {
+            "count": 1,
+            "price_from": 2900000,
+            "price_to": 2900000,
+            "price_m2_from": 14873,
+            "price_m2_to": 14873,
+            "area_from": 194.98,
+            "area_to": 194.98
+          }
+        }
+      }
+    },
+    {
+      "id": 2001,
+      "city_id": 6,
+      "slug": "the-momentum-district",
+      "weight": -150,
+      "title": "The Momentum District",
+      "type": "project",
+      "latitude": 8.03702389,
+      "longitude": 98.29311199,
+      "logo": {
+        "id": 429024,
+        "hash": "44033a95caabda15f82aae57dc9cfedc",
+        "src": "https://files.alnair.ae/uploads/2025/8/c6/dc/c6dcea44d6d96911ef7c086001b16af2.png",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/8/c6/dc/c6dcea44d6d96911ef7c086001b16af2.png"
+      },
+      "cover": {
+        "id": 146464,
+        "hash": "926ea7e437c83999067b5aa301757b1b",
+        "src": "https://files.alnair.ae/uploads/2024/3/bd/9f/bd9ff4a748fc7fa150d45eb408042df4.png",
+        "logo": "https://files.alnair.ae/uploads/logo/2024/3/bd/9f/bd9ff4a748fc7fa150d45eb408042df4.png"
+      },
+      "construction_percent": "20.00",
+      "construction_inspection_date": "2027-09-30 00:00:00",
+      "construction_percent_out_of_plan": -7.21,
+      "agent_fee_value": "7.00",
+      "builder": "Serene Innovations & Developments",
+      "catalogs": {
+        "project_badges": [
+          366
+        ],
+        "project_sales_status": [
+          5
+        ]
+      },
+      "district": {
+        "id": 571,
+        "title": "Phuket, Layan"
+      },
+      "photos": [
+        {
+          "id": 146592,
+          "hash": "2e849f7606d3829fb3e6f5570355509c",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/11/b3/11b343246bad7afe31a4a810b1b9c727.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/11/b3/11b343246bad7afe31a4a810b1b9c727.png",
+          "size": 4368399,
+          "src_video": null
+        },
+        {
+          "id": 146557,
+          "hash": "9dd1f817210fa8ec90c1a583bc4a787b",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/ad/52/ad5259ce84608644c69c298001cec839.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/ad/52/ad5259ce84608644c69c298001cec839.png",
+          "size": 4265472,
+          "src_video": null
+        },
+        {
+          "id": 146558,
+          "hash": "bb2fcf428954cbbf50d212afb98efccc",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/83/a4/83a4829a10f3e908e094b4e99e52c63d.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/83/a4/83a4829a10f3e908e094b4e99e52c63d.png",
+          "size": 4170132,
+          "src_video": null
+        },
+        {
+          "id": 146560,
+          "hash": "30a47daf6b0ee4748a03e2d866678e8a",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/7d/ca/7dca323e58e100dc398f1860343071ee.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/7d/ca/7dca323e58e100dc398f1860343071ee.png",
+          "size": 3941211,
+          "src_video": null
+        },
+        {
+          "id": 146562,
+          "hash": "0af631b2d364aa5214808131909638cf",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/3a/d2/3ad21d7869b37a0176d252604478b760.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/3a/d2/3ad21d7869b37a0176d252604478b760.png",
+          "size": 4292571,
+          "src_video": null
+        },
+        {
+          "id": 146586,
+          "hash": "baf87a0383254208240458653f908ecd",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/3/53/cc/53cc44319b92ea7817f34f405207f248.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2024/3/53/cc/53cc44319b92ea7817f34f405207f248.png",
+          "size": 3263379,
+          "src_video": null
+        }
+      ],
+      "statistics": {
+        "transactions": null,
+        "rents": null,
+        "total": {
+          "count": 92,
+          "price_from": 5112000,
+          "price_to": 19692000,
+          "price_m2_from": 138889,
+          "price_m2_to": 159389,
+          "units_count": 376,
+          "units_resale_count": 1,
+          "units_area_mt": "13789.00",
+          "units_max_floor": 7
+        },
+        "units": {
+          "110": {
+            "count": 75,
+            "price_from": 5112000,
+            "price_to": 6348000,
+            "price_m2_from": 142000,
+            "price_m2_to": 154778,
+            "area_from": 36,
+            "area_to": 44
+          },
+          "111": {
+            "count": 5,
+            "price_from": 7500000,
+            "price_to": 9472000,
+            "price_m2_from": 138889,
+            "price_m2_to": 153961,
+            "area_from": 51,
+            "area_to": 66
+          },
+          "112": {
+            "count": 12,
+            "price_from": 10224000,
+            "price_to": 19692000,
+            "price_m2_from": 142000,
+            "price_m2_to": 159389,
+            "area_from": 72,
+            "area_to": 124
+          }
+        }
+      }
+    },
+    {
+      "id": 3624,
+      "city_id": 1,
+      "slug": "luz-ora-residences",
+      "weight": -132,
+      "title": "Luz Ora Residences",
+      "type": "project",
+      "latitude": 25.299637057687,
+      "longitude": 55.316626114236,
+      "logo": {
+        "id": 512664,
+        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
+        "src": "https://files.alnair.ae/uploads/2025/12/25/1e/251efec4a5d92a47b7340ebd5d2135b1.png",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/12/25/1e/251efec4a5d92a47b7340ebd5d2135b1.png"
+      },
+      "cover": {
+        "id": 512690,
+        "hash": "17c29fcd81010d022dddbdef7fd1ac7a",
+        "src": "https://files.alnair.ae/uploads/2025/12/75/12/7512adebba3a5358746bd9c6e2f78146.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/12/75/12/7512adebba3a5358746bd9c6e2f78146.jpg"
+      },
+      "construction_percent": "3.52",
+      "construction_inspection_date": "2027-08-31 00:00:00",
+      "construction_percent_out_of_plan": -45.44,
+      "agent_fee_value": "6.00",
+      "builder": "DIA Developments",
       "catalogs": {
         "project_badges": [
           366
@@ -1006,66 +772,332 @@
       },
       "photos": [
         {
-          "id": 405614,
-          "hash": "6a275970634a29de2c00c5659827d30e",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/7/1f/a5/1fa5cc33c64d79e677384ca4d0ff8166.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/7/1f/a5/1fa5cc33c64d79e677384ca4d0ff8166.jpg",
-          "size": 749064,
+          "id": 512709,
+          "hash": "4a47a0db6e60853dedfcfdf08a5ca249",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/4d/d2/4dd2cbaab590ea9df579ad1ccd9a48c4.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/4d/d2/4dd2cbaab590ea9df579ad1ccd9a48c4.png",
+          "size": 5829259,
           "src_video": null
         },
         {
-          "id": 405616,
-          "hash": "465964eea6529dd718bdd0e7b51a8074",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/7/5d/57/5d57d6952a39a0778f8cf42954ceacb8.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/7/5d/57/5d57d6952a39a0778f8cf42954ceacb8.jpg",
-          "size": 1155409,
+          "id": 512710,
+          "hash": "fb5c81ed3a220004b71069645f112867",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/08/93/089365905b4edb02d75a6e3916c9f1f2.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/08/93/089365905b4edb02d75a6e3916c9f1f2.png",
+          "size": 5710281,
           "src_video": null
         },
         {
-          "id": 405618,
-          "hash": "cca5c779b92d8bd281027e49afcfb7e7",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/7/a0/5d/a05d0537e1044fa49e31212e983d3237.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/7/a0/5d/a05d0537e1044fa49e31212e983d3237.jpg",
-          "size": 785430,
+          "id": 512711,
+          "hash": "10fb15c77258a991b0028080a64fb42d",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/4c/46/4c46ff00c8d3de9c6eec0d8dd6e5b25d.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/4c/46/4c46ff00c8d3de9c6eec0d8dd6e5b25d.png",
+          "size": 4246555,
+          "src_video": null
+        },
+        {
+          "id": 512729,
+          "hash": "09dd8c2662b96ce14928333f055c5580",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/12/bd/69/bd69fdcaad9731564ca9c990bb356067.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/12/bd/69/bd69fdcaad9731564ca9c990bb356067.png",
+          "size": 5281195,
           "src_video": null
         }
       ],
       "statistics": {
         "transactions": {
           "111": 9,
-          "112": 11,
-          "113": 1
+          "112": 6
         },
         "rents": null,
         "total": {
-          "count": 18,
-          "price_from": 2744128,
-          "price_to": 5214462,
-          "price_m2_from": 14012,
-          "price_m2_to": 28719,
-          "units_count": 63,
+          "count": 34,
+          "price_from": 1820194,
+          "price_to": 8240000,
+          "price_m2_from": 15333,
+          "price_m2_to": 33940,
+          "units_count": 108,
           "units_resale_count": 0,
-          "units_area_mt": "7674.58",
+          "units_area_mt": "12559.35",
           "units_max_floor": 8
         },
         "units": {
+          "111": {
+            "count": 13,
+            "price_from": 1820194,
+            "price_to": 2954114,
+            "price_m2_from": 17155,
+            "price_m2_to": 33940,
+            "area_from": 53.63,
+            "area_to": 172.2
+          },
           "112": {
-            "count": 12,
-            "price_from": 2744128,
-            "price_to": 3394053,
-            "price_m2_from": 23208,
-            "price_m2_to": 28719,
-            "area_from": 108.97,
-            "area_to": 118.45
+            "count": 20,
+            "price_from": 2935141,
+            "price_to": 4171188,
+            "price_m2_from": 15333,
+            "price_m2_to": 27979,
+            "area_from": 121.04,
+            "area_to": 272.04
+          },
+          "114": {
+            "count": 1,
+            "price_from": 8240000,
+            "price_to": 8240000,
+            "price_m2_from": 30856,
+            "price_m2_to": 30856,
+            "area_from": 267.05,
+            "area_to": 267.05
+          }
+        }
+      }
+    },
+    {
+      "id": 5843,
+      "city_id": 1,
+      "slug": "697102a325136-azizi-venice-16",
+      "weight": -130,
+      "title": "Azizi Venice 16",
+      "type": "project",
+      "latitude": 24.839144058925,
+      "longitude": 55.134421798955,
+      "logo": {
+        "id": 548256,
+        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
+        "src": "https://files.alnair.ae/uploads/2026/1/b5/0e/b50e43039a6739cb067f8abc4a11ae7d.png",
+        "logo": "https://files.alnair.ae/uploads/logo/2026/1/b5/0e/b50e43039a6739cb067f8abc4a11ae7d.png"
+      },
+      "cover": {
+        "id": 548257,
+        "hash": "b67f32705e6fa103f8af81bf8d263ae9",
+        "src": "https://files.alnair.ae/uploads/2026/1/f1/f7/f1f7ff867e42f6659bdf527dc654c078.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2026/1/f1/f7/f1f7ff867e42f6659bdf527dc654c078.jpg"
+      },
+      "construction_percent": "0",
+      "construction_inspection_date": "2027-06-02 11:11:34",
+      "construction_percent_out_of_plan": null,
+      "agent_fee_value": "7.00",
+      "builder": "Azizi",
+      "catalogs": {
+        "project_badges": [
+          366
+        ],
+        "project_sales_status": [
+          5
+        ]
+      },
+      "district": {
+        "id": 249,
+        "title": "Dubai, Dubai South"
+      },
+      "photos": [
+        {
+          "id": 548260,
+          "hash": "e8592e31831b304fbe71969bc00351c1",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2026/1/b8/2a/b82a59a80b988334708d0f40902287b4.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2026/1/b8/2a/b82a59a80b988334708d0f40902287b4.jpg",
+          "size": 716912,
+          "src_video": null
+        },
+        {
+          "id": 548261,
+          "hash": "85da7c419140eb0995628120dfc36aa0",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2026/1/95/aa/95aafb5bcd18bd1a2acf52849bb95594.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2026/1/95/aa/95aafb5bcd18bd1a2acf52849bb95594.jpg",
+          "size": 998761,
+          "src_video": null
+        },
+        {
+          "id": 548262,
+          "hash": "4990e3f50eae5cace6bc17a48c16e102",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2026/1/00/b1/00b11d02089f5ab82b5d1fe1586585db.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2026/1/00/b1/00b11d02089f5ab82b5d1fe1586585db.jpg",
+          "size": 867147,
+          "src_video": null
+        },
+        {
+          "id": 548263,
+          "hash": "d10b28a5d6acd8267b8eb284c8f4a02d",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2026/1/0e/b7/0eb7502d41510e9275ef493d7bb4dce4.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2026/1/0e/b7/0eb7502d41510e9275ef493d7bb4dce4.jpg",
+          "size": 838104,
+          "src_video": null
+        }
+      ],
+      "statistics": {
+        "transactions": {
+          "110": 8
+        },
+        "rents": null,
+        "total": {
+          "count": 271,
+          "price_from": 755000,
+          "price_to": 3586000,
+          "price_m2_from": 18932,
+          "price_m2_to": 25559,
+          "units_count": 1055,
+          "units_resale_count": 0,
+          "units_area_mt": "67787.86",
+          "units_max_floor": 14
+        },
+        "units": {
+          "110": {
+            "count": 156,
+            "price_from": 755000,
+            "price_to": 912000,
+            "price_m2_from": 22228,
+            "price_m2_to": 25559,
+            "area_from": 29.54,
+            "area_to": 39.86
+          },
+          "112": {
+            "count": 83,
+            "price_from": 2222000,
+            "price_to": 2321000,
+            "price_m2_from": 20278,
+            "price_m2_to": 21624,
+            "area_from": 103.54,
+            "area_to": 112.88
           },
           "113": {
-            "count": 6,
-            "price_from": 3793878,
-            "price_to": 5214462,
-            "price_m2_from": 14012,
-            "price_m2_to": 28568,
-            "area_from": 156.04,
-            "area_to": 370.37
+            "count": 32,
+            "price_from": 3387000,
+            "price_to": 3586000,
+            "price_m2_from": 18932,
+            "price_m2_to": 22642,
+            "area_from": 157.01,
+            "area_to": 181.02
+          }
+        }
+      }
+    },
+    {
+      "id": 3294,
+      "city_id": 6,
+      "slug": "tri-vananda",
+      "weight": -128,
+      "title": "Tri Vananda",
+      "type": "compound",
+      "latitude": 8.0390137733867,
+      "longitude": 98.311999440193,
+      "logo": {
+        "id": 428967,
+        "hash": "48f5b70ab32ba7087da70b5f504e5568",
+        "src": "https://files.alnair.ae/uploads/2025/8/4c/2d/4c2d466df180c359252c66af2be0adba.png",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/8/4c/2d/4c2d466df180c359252c66af2be0adba.png"
+      },
+      "cover": {
+        "id": 289837,
+        "hash": "8edc004c3371598f76a7aa0ed677edba",
+        "src": "https://files.alnair.ae/uploads/2025/1/ea/99/ea99ce1164c45adfccee33a389cb765d.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/1/ea/99/ea99ce1164c45adfccee33a389cb765d.jpg"
+      },
+      "construction_percent": "0",
+      "construction_inspection_date": null,
+      "construction_percent_out_of_plan": null,
+      "agent_fee_value": "3.00",
+      "builder": "Tri Vananda",
+      "catalogs": {
+        "project_badges": [
+          366
+        ],
+        "project_sales_status": [
+          5
+        ]
+      },
+      "district": {
+        "id": 358,
+        "title": "Phuket, amphoe Thalang"
+      },
+      "photos": [
+        {
+          "id": 289815,
+          "hash": "eba784060d8ac05b6b63531a6bd51364",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/7a/78/7a78ec822e113f7379149e850de82c36.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/7a/78/7a78ec822e113f7379149e850de82c36.jpg",
+          "size": 690655,
+          "src_video": null
+        },
+        {
+          "id": 289814,
+          "hash": "e3225e05367e995a99bfeb1f02a86f7c",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/1b/d2/1bd24d95b9fcd7d80e4003f8fee1a131.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/1b/d2/1bd24d95b9fcd7d80e4003f8fee1a131.jpg",
+          "size": 170335,
+          "src_video": null
+        },
+        {
+          "id": 289812,
+          "hash": "6cfed3ca7eace0777200cca0b76bd9e9",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/42/19/42192d03bccb1632557f850aaa3926b6.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/42/19/42192d03bccb1632557f850aaa3926b6.jpg",
+          "size": 743310,
+          "src_video": null
+        },
+        {
+          "id": 289813,
+          "hash": "b1ee53694772854f806419b66a6642d2",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/a7/21/a721ea6a43836bf25695512ea236f956.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/a7/21/a721ea6a43836bf25695512ea236f956.jpg",
+          "size": 729170,
+          "src_video": null
+        },
+        {
+          "id": 289811,
+          "hash": "62576d2bfd855300603598a65e878edc",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/17/7f/177f047fc784e2fc8a1efabe7aac7fb7.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/17/7f/177f047fc784e2fc8a1efabe7aac7fb7.jpg",
+          "size": 758265,
+          "src_video": null
+        },
+        {
+          "id": 289825,
+          "hash": "ed73b86852110d6285eb17ad20da1435",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/eb/3b/eb3bc4543970a4c499bd5b30ab13efb7.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/eb/3b/eb3bc4543970a4c499bd5b30ab13efb7.jpg",
+          "size": 532839,
+          "src_video": null
+        },
+        {
+          "id": 289826,
+          "hash": "fb755ae58a2e9a27939b6d0713c83680",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/4c/04/4c04e6563fa1f322743e4968bdccce4e.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/4c/04/4c04e6563fa1f322743e4968bdccce4e.jpg",
+          "size": 368322,
+          "src_video": null
+        },
+        {
+          "id": 289827,
+          "hash": "441172fa71162e8b8ab77332be685819",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/dc/f9/dcf9fa4188ccf116d85ea500af8b275b.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/dc/f9/dcf9fa4188ccf116d85ea500af8b275b.jpg",
+          "size": 364638,
+          "src_video": null
+        }
+      ],
+      "statistics": {
+        "transactions": null,
+        "rents": null,
+        "total": {
+          "count": 82,
+          "price_from": 44000000,
+          "price_to": 113000000,
+          "price_m2_from": 132132,
+          "price_m2_to": 158272,
+          "units_count": 140,
+          "units_resale_count": 0,
+          "units_area_mt": "73311.00",
+          "units_max_floor": 0
+        },
+        "villas": {
+          "462": {
+            "count": 82,
+            "price_from": 44000000,
+            "price_to": 113000000,
+            "price_m2_from": 132132,
+            "price_m2_to": 158272,
+            "area_from": 325,
+            "area_to": 780
           }
         }
       }
@@ -1074,7 +1106,7 @@
       "id": 3869,
       "city_id": 1,
       "slug": "olivia-gardens-residence",
-      "weight": -114,
+      "weight": -125,
       "title": "Olivia Gardens Residence",
       "type": "project",
       "latitude": 25.224906921715,
@@ -1223,31 +1255,31 @@
       }
     },
     {
-      "id": 2587,
+      "id": 3533,
       "city_id": 1,
-      "slug": "amber-by-enso",
-      "weight": -114,
-      "title": "Amber by Enso",
+      "slug": "capital-horizon-terraces",
+      "weight": -124,
+      "title": "Capital Horizon Terraces",
       "type": "project",
-      "latitude": 25.224558152456,
-      "longitude": 55.27935650272,
+      "latitude": 25.298985946291,
+      "longitude": 55.316396802664,
       "logo": {
-        "id": 213235,
-        "hash": "a7c644f82dbde093ca426058deaeb9ab",
-        "src": "https://files.alnair.ae/uploads/2024/8/b2/bf/b2bf15b8992305de5310c70d1e9048bb.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2024/8/b2/bf/b2bf15b8992305de5310c70d1e9048bb.jpg"
+        "id": 405606,
+        "hash": "1e4e037c99ef8f23649f4ae443b8fb38",
+        "src": "https://files.alnair.ae/uploads/2025/7/69/ae/69ae40160c30c713e2680ebc9c4c4fd4.png",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/7/69/ae/69ae40160c30c713e2680ebc9c4c4fd4.png"
       },
       "cover": {
-        "id": 404761,
-        "hash": "352f753f01a31898d90ca94766ca6760",
-        "src": "https://files.alnair.ae/uploads/2025/7/56/a2/56a25461e08b5ab6a085bcf8a7789da9.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/7/56/a2/56a25461e08b5ab6a085bcf8a7789da9.jpg"
+        "id": 405605,
+        "hash": "7e4018813b77945925f5f87de0afdc70",
+        "src": "https://files.alnair.ae/uploads/2025/7/62/b2/62b21ac14c084d79cc8dab08259c690e.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/7/62/b2/62b21ac14c084d79cc8dab08259c690e.jpg"
       },
-      "construction_percent": "2.13",
+      "construction_percent": "15.00",
       "construction_inspection_date": "2026-12-30 00:00:00",
-      "construction_percent_out_of_plan": -55.99,
-      "agent_fee_value": "6.00",
-      "builder": "ENSO",
+      "construction_percent_out_of_plan": -29.87,
+      "agent_fee_value": "7.00",
+      "builder": "Cirrera Development",
       "catalogs": {
         "project_badges": [
           366
@@ -1257,215 +1289,101 @@
         ]
       },
       "district": {
-        "id": 168,
-        "title": "Dubai, Jumeirah Gardens"
+        "id": 330,
+        "title": "Dubai, Dubai Islands"
       },
       "photos": [
         {
-          "id": 213238,
-          "hash": "4877579b551c6fe1bbb91af474db160c",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2024/8/1a/b6/1ab683947fe031e0995e4bca43a13402.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2024/8/1a/b6/1ab683947fe031e0995e4bca43a13402.jpg",
-          "size": 1135238,
+          "id": 405614,
+          "hash": "6a275970634a29de2c00c5659827d30e",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/7/1f/a5/1fa5cc33c64d79e677384ca4d0ff8166.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/7/1f/a5/1fa5cc33c64d79e677384ca4d0ff8166.jpg",
+          "size": 749064,
           "src_video": null
         },
         {
-          "id": 497295,
-          "hash": "e042a0a6a6c3461726fc2dbdff7436bc",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/11/05/af/05aff3fa53d43daa644be127bad1b43d.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/11/05/af/05aff3fa53d43daa644be127bad1b43d.jpg",
-          "size": 1630665,
+          "id": 405616,
+          "hash": "465964eea6529dd718bdd0e7b51a8074",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/7/5d/57/5d57d6952a39a0778f8cf42954ceacb8.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/7/5d/57/5d57d6952a39a0778f8cf42954ceacb8.jpg",
+          "size": 1155409,
           "src_video": null
         },
         {
-          "id": 497296,
-          "hash": "6ff570b7938ddbd3e5275cb112b8327f",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/11/b8/79/b87934fae314156186e2ca21ab4b2a96.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/11/b8/79/b87934fae314156186e2ca21ab4b2a96.jpg",
-          "size": 1424901,
-          "src_video": null
-        },
-        {
-          "id": 497297,
-          "hash": "28badd9e398bebf1f0f07c3ebd0c59f7",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/11/e6/b0/e6b0588dba2a9d12149073ef82ce72b6.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/11/e6/b0/e6b0588dba2a9d12149073ef82ce72b6.jpg",
-          "size": 644278,
+          "id": 405618,
+          "hash": "cca5c779b92d8bd281027e49afcfb7e7",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/7/a0/5d/a05d0537e1044fa49e31212e983d3237.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/7/a0/5d/a05d0537e1044fa49e31212e983d3237.jpg",
+          "size": 785430,
           "src_video": null
         }
       ],
       "statistics": {
         "transactions": {
-          "110": 10,
-          "111": 14,
-          "112": 1
-        },
-        "rents": null,
-        "total": {
-          "count": 18,
-          "price_from": 1520000,
-          "price_to": 2670000,
-          "price_m2_from": 20000,
-          "price_m2_to": 26357,
-          "units_count": 71,
-          "units_resale_count": 0,
-          "units_area_mt": "5243.66",
-          "units_max_floor": 9
-        },
-        "units": {
-          "110": {
-            "count": 1,
-            "price_from": 1520000,
-            "price_to": 1520000,
-            "price_m2_from": 20633,
-            "price_m2_to": 20633,
-            "area_from": 73.67,
-            "area_to": 73.67
-          },
-          "111": {
-            "count": 17,
-            "price_from": 1768000,
-            "price_to": 2670000,
-            "price_m2_from": 20000,
-            "price_m2_to": 26357,
-            "area_from": 67.08,
-            "area_to": 133.5
-          }
-        }
-      }
-    },
-    {
-      "id": 5810,
-      "city_id": 1,
-      "slug": "69660dbd3452e-azizi-venice-14",
-      "weight": -109,
-      "title": "Azizi Venice 14",
-      "type": "project",
-      "latitude": 24.836486008948,
-      "longitude": 55.138635901214,
-      "logo": {
-        "id": 541555,
-        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
-        "src": "https://files.alnair.ae/uploads/2026/1/b6/d3/b6d36067f37015836453137ff43bfe3a.png",
-        "logo": "https://files.alnair.ae/uploads/logo/2026/1/b6/d3/b6d36067f37015836453137ff43bfe3a.png"
-      },
-      "cover": {
-        "id": 541568,
-        "hash": "51494b66b20eaec11fe501f5bdf797f4",
-        "src": "https://files.alnair.ae/uploads/2026/1/61/bb/61bb2798af848ba351a423ae56265c0d.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2026/1/61/bb/61bb2798af848ba351a423ae56265c0d.jpg"
-      },
-      "construction_percent": "13.84",
-      "construction_inspection_date": "2026-05-30 11:11:34",
-      "construction_percent_out_of_plan": -60.04,
-      "agent_fee_value": "7.00",
-      "builder": "Azizi",
-      "catalogs": {
-        "project_badges": [
-          366
-        ],
-        "project_sales_status": [
-          5
-        ]
-      },
-      "district": {
-        "id": 249,
-        "title": "Dubai, Dubai South"
-      },
-      "photos": [],
-      "statistics": {
-        "transactions": {
-          "110": 32,
-          "111": 24,
+          "111": 9,
+          "112": 11,
           "113": 1
         },
         "rents": null,
         "total": {
-          "count": 543,
-          "price_from": 710000,
-          "price_to": 17225000,
-          "price_m2_from": 14976,
-          "price_m2_to": 55677,
-          "units_count": 3477,
+          "count": 18,
+          "price_from": 2744128,
+          "price_to": 5214462,
+          "price_m2_from": 14012,
+          "price_m2_to": 28719,
+          "units_count": 63,
           "units_resale_count": 0,
-          "units_area_mt": "177623.92",
-          "units_max_floor": 17
+          "units_area_mt": "7674.58",
+          "units_max_floor": 8
         },
         "units": {
-          "110": {
-            "count": 4,
-            "price_from": 710000,
-            "price_to": 710000,
-            "price_m2_from": 20993,
-            "price_m2_to": 20993,
-            "area_from": 33.82,
-            "area_to": 33.82
-          },
-          "111": {
-            "count": 291,
-            "price_from": 1230000,
-            "price_to": 1338000,
-            "price_m2_from": 14976,
-            "price_m2_to": 20003,
-            "area_from": 66.89,
-            "area_to": 82.13
-          },
           "112": {
-            "count": 163,
-            "price_from": 2414000,
-            "price_to": 2529000,
-            "price_m2_from": 20796,
-            "price_m2_to": 25089,
-            "area_from": 100.8,
-            "area_to": 121.61
+            "count": 12,
+            "price_from": 2744128,
+            "price_to": 3394053,
+            "price_m2_from": 23208,
+            "price_m2_to": 28719,
+            "area_from": 108.97,
+            "area_to": 118.45
           },
           "113": {
-            "count": 25,
-            "price_from": 3156000,
-            "price_to": 3156000,
-            "price_m2_from": 21500,
-            "price_m2_to": 21515,
-            "area_from": 146.69,
-            "area_to": 146.79
-          },
-          "164": {
-            "count": 60,
-            "price_from": 3102000,
-            "price_to": 17225000,
-            "price_m2_from": 45929,
-            "price_m2_to": 55677,
-            "area_from": 63.64,
-            "area_to": 369.16
+            "count": 6,
+            "price_from": 3793878,
+            "price_to": 5214462,
+            "price_m2_from": 14012,
+            "price_m2_to": 28568,
+            "area_from": 156.04,
+            "area_to": 370.37
           }
         }
       }
     },
     {
-      "id": 3294,
-      "city_id": 6,
-      "slug": "tri-vananda",
-      "weight": -108,
-      "title": "Tri Vananda",
-      "type": "compound",
-      "latitude": 8.0390137733867,
-      "longitude": 98.311999440193,
+      "id": 3363,
+      "city_id": 1,
+      "slug": "sea-legend-one",
+      "weight": -124,
+      "title": "Sea Legend One",
+      "type": "project",
+      "latitude": 25.299519741608,
+      "longitude": 55.297387316744,
       "logo": {
-        "id": 428967,
-        "hash": "48f5b70ab32ba7087da70b5f504e5568",
-        "src": "https://files.alnair.ae/uploads/2025/8/4c/2d/4c2d466df180c359252c66af2be0adba.png",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/8/4c/2d/4c2d466df180c359252c66af2be0adba.png"
+        "id": 385667,
+        "hash": "be0a7fe148da44af4874796e5c874bfa",
+        "src": "https://files.alnair.ae/uploads/2025/6/fd/e4/fde44ee90292225098720e3b849802e3.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/6/fd/e4/fde44ee90292225098720e3b849802e3.jpg"
       },
       "cover": {
-        "id": 289837,
-        "hash": "8edc004c3371598f76a7aa0ed677edba",
-        "src": "https://files.alnair.ae/uploads/2025/1/ea/99/ea99ce1164c45adfccee33a389cb765d.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/1/ea/99/ea99ce1164c45adfccee33a389cb765d.jpg"
+        "id": 366957,
+        "hash": "84cda1dc5e61833b6d41dbd55d74ec24",
+        "src": "https://files.alnair.ae/uploads/2025/5/a8/c1/a8c10c5c8b806e53620b06fd33837e08.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/5/a8/c1/a8c10c5c8b806e53620b06fd33837e08.jpg"
       },
       "construction_percent": "0",
-      "construction_inspection_date": null,
+      "construction_inspection_date": "2027-06-30 00:00:00",
       "construction_percent_out_of_plan": null,
-      "agent_fee_value": "3.00",
-      "builder": "Tri Vananda",
+      "agent_fee_value": "5.00",
+      "builder": "MVS Real Estate Development",
       "catalogs": {
         "project_badges": [
           366
@@ -1475,98 +1393,120 @@
         ]
       },
       "district": {
-        "id": 358,
-        "title": "Phuket, amphoe Thalang"
+        "id": 330,
+        "title": "Dubai, Dubai Islands"
       },
       "photos": [
         {
-          "id": 289815,
-          "hash": "eba784060d8ac05b6b63531a6bd51364",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/7a/78/7a78ec822e113f7379149e850de82c36.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/7a/78/7a78ec822e113f7379149e850de82c36.jpg",
-          "size": 690655,
+          "id": 388172,
+          "hash": "7ee3415165a2fbc3724595bb0a309a9f",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/07/e2/07e202ff90f628bc15d17819bede2821.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/07/e2/07e202ff90f628bc15d17819bede2821.png",
+          "size": 5323221,
           "src_video": null
         },
         {
-          "id": 289814,
-          "hash": "e3225e05367e995a99bfeb1f02a86f7c",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/1b/d2/1bd24d95b9fcd7d80e4003f8fee1a131.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/1b/d2/1bd24d95b9fcd7d80e4003f8fee1a131.jpg",
-          "size": 170335,
+          "id": 388155,
+          "hash": "7337c041cc8916241252496922913e5f",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/5b/02/5b025d524c9b6d1c271dcd5f3a1d3685.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/5b/02/5b025d524c9b6d1c271dcd5f3a1d3685.png",
+          "size": 4883719,
           "src_video": null
         },
         {
-          "id": 289812,
-          "hash": "6cfed3ca7eace0777200cca0b76bd9e9",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/42/19/42192d03bccb1632557f850aaa3926b6.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/42/19/42192d03bccb1632557f850aaa3926b6.jpg",
-          "size": 743310,
+          "id": 388156,
+          "hash": "715944b40989deb2bdef5675d6227f0a",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/6f/c1/6fc15a2e71a9e03d0c07e29d4277cc44.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/6f/c1/6fc15a2e71a9e03d0c07e29d4277cc44.png",
+          "size": 3414369,
           "src_video": null
         },
         {
-          "id": 289813,
-          "hash": "b1ee53694772854f806419b66a6642d2",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/a7/21/a721ea6a43836bf25695512ea236f956.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/a7/21/a721ea6a43836bf25695512ea236f956.jpg",
-          "size": 729170,
+          "id": 388159,
+          "hash": "7557f7eab703cf7ea624a26a087a4e6a",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/9e/29/9e2968679286f35c7df0b3d0b2945c67.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/9e/29/9e2968679286f35c7df0b3d0b2945c67.png",
+          "size": 5164659,
           "src_video": null
         },
         {
-          "id": 289811,
-          "hash": "62576d2bfd855300603598a65e878edc",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/17/7f/177f047fc784e2fc8a1efabe7aac7fb7.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/17/7f/177f047fc784e2fc8a1efabe7aac7fb7.jpg",
-          "size": 758265,
+          "id": 388166,
+          "hash": "90624ae25f2fda8c5405a8196215420e",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/48/b8/48b876d8d5d7e603a3d21d3cb1ee9ba5.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/48/b8/48b876d8d5d7e603a3d21d3cb1ee9ba5.png",
+          "size": 4530918,
           "src_video": null
         },
         {
-          "id": 289825,
-          "hash": "ed73b86852110d6285eb17ad20da1435",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/eb/3b/eb3bc4543970a4c499bd5b30ab13efb7.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/eb/3b/eb3bc4543970a4c499bd5b30ab13efb7.jpg",
-          "size": 532839,
+          "id": 388168,
+          "hash": "56db5b3ef2ebe16cbc9953466197284c",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/c5/1d/c51dd7fae425d683ebb2b5145380f57d.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/c5/1d/c51dd7fae425d683ebb2b5145380f57d.jpg",
+          "size": 1015628,
           "src_video": null
         },
         {
-          "id": 289826,
-          "hash": "fb755ae58a2e9a27939b6d0713c83680",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/4c/04/4c04e6563fa1f322743e4968bdccce4e.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/4c/04/4c04e6563fa1f322743e4968bdccce4e.jpg",
-          "size": 368322,
+          "id": 388169,
+          "hash": "7d138c39adf5faedc0dea2667d18f1e7",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/76/05/76058039b586242db35413624bff1719.jpg",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/76/05/76058039b586242db35413624bff1719.jpg",
+          "size": 1039398,
           "src_video": null
         },
         {
-          "id": 289827,
-          "hash": "441172fa71162e8b8ab77332be685819",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/1/dc/f9/dcf9fa4188ccf116d85ea500af8b275b.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/1/dc/f9/dcf9fa4188ccf116d85ea500af8b275b.jpg",
-          "size": 364638,
+          "id": 388171,
+          "hash": "a5533560e1901666122093bbb2498f84",
+          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/34/f4/34f41e38447c1aa9c6622e8d69002777.png",
+          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/34/f4/34f41e38447c1aa9c6622e8d69002777.png",
+          "size": 3611269,
           "src_video": null
         }
       ],
       "statistics": {
-        "transactions": null,
+        "transactions": {
+          "111": 5,
+          "112": 9,
+          "113": 3
+        },
         "rents": null,
         "total": {
-          "count": 82,
-          "price_from": 44000000,
-          "price_to": 113000000,
-          "price_m2_from": 132132,
-          "price_m2_to": 158272,
-          "units_count": 140,
+          "count": 25,
+          "price_from": 2501635,
+          "price_to": 6825752,
+          "price_m2_from": 21689,
+          "price_m2_to": 36513,
+          "units_count": 65,
           "units_resale_count": 0,
-          "units_area_mt": "73311.00",
-          "units_max_floor": 0
+          "units_area_mt": "8967.54",
+          "units_max_floor": 11
         },
-        "villas": {
-          "462": {
-            "count": 82,
-            "price_from": 44000000,
-            "price_to": 113000000,
-            "price_m2_from": 132132,
-            "price_m2_to": 158272,
-            "area_from": 325,
-            "area_to": 780
+        "units": {
+          "111": {
+            "count": 2,
+            "price_from": 2501635,
+            "price_to": 2585823,
+            "price_m2_from": 32903,
+            "price_m2_to": 36513,
+            "area_from": 70.82,
+            "area_to": 76.03
+          },
+          "112": {
+            "count": 18,
+            "price_from": 3413463,
+            "price_to": 6825752,
+            "price_m2_from": 21689,
+            "price_m2_to": 33595,
+            "area_from": 106.94,
+            "area_to": 314.71
+          },
+          "113": {
+            "count": 5,
+            "price_from": 3863790,
+            "price_to": 4570891,
+            "price_m2_from": 27126,
+            "price_m2_to": 30215,
+            "area_from": 142.44,
+            "area_to": 151.28
           }
         }
       }
@@ -1575,7 +1515,7 @@
       "id": 4682,
       "city_id": 5,
       "slug": "colibri-views",
-      "weight": -106,
+      "weight": -123,
       "title": "Colibri Views",
       "type": "project",
       "latitude": 25.690790332118,
@@ -1728,31 +1668,31 @@
       }
     },
     {
-      "id": 3363,
+      "id": 5810,
       "city_id": 1,
-      "slug": "sea-legend-one",
-      "weight": -100,
-      "title": "Sea Legend One",
+      "slug": "69660dbd3452e-azizi-venice-14",
+      "weight": -119,
+      "title": "Azizi Venice 14",
       "type": "project",
-      "latitude": 25.299519741608,
-      "longitude": 55.297387316744,
+      "latitude": 24.836486008948,
+      "longitude": 55.138635901214,
       "logo": {
-        "id": 385667,
-        "hash": "be0a7fe148da44af4874796e5c874bfa",
-        "src": "https://files.alnair.ae/uploads/2025/6/fd/e4/fde44ee90292225098720e3b849802e3.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/6/fd/e4/fde44ee90292225098720e3b849802e3.jpg"
+        "id": 541555,
+        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
+        "src": "https://files.alnair.ae/uploads/2026/1/b6/d3/b6d36067f37015836453137ff43bfe3a.png",
+        "logo": "https://files.alnair.ae/uploads/logo/2026/1/b6/d3/b6d36067f37015836453137ff43bfe3a.png"
       },
       "cover": {
-        "id": 366957,
-        "hash": "84cda1dc5e61833b6d41dbd55d74ec24",
-        "src": "https://files.alnair.ae/uploads/2025/5/a8/c1/a8c10c5c8b806e53620b06fd33837e08.jpg",
-        "logo": "https://files.alnair.ae/uploads/logo/2025/5/a8/c1/a8c10c5c8b806e53620b06fd33837e08.jpg"
+        "id": 541568,
+        "hash": "51494b66b20eaec11fe501f5bdf797f4",
+        "src": "https://files.alnair.ae/uploads/2026/1/61/bb/61bb2798af848ba351a423ae56265c0d.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2026/1/61/bb/61bb2798af848ba351a423ae56265c0d.jpg"
       },
-      "construction_percent": "0",
-      "construction_inspection_date": "2027-06-30 00:00:00",
-      "construction_percent_out_of_plan": null,
-      "agent_fee_value": "5.00",
-      "builder": "MVS Real Estate Development",
+      "construction_percent": "13.84",
+      "construction_inspection_date": "2026-05-30 11:11:34",
+      "construction_percent_out_of_plan": -60.04,
+      "agent_fee_value": "7.00",
+      "builder": "Azizi",
       "catalogs": {
         "project_badges": [
           366
@@ -1762,120 +1702,180 @@
         ]
       },
       "district": {
-        "id": 330,
-        "title": "Dubai, Dubai Islands"
+        "id": 249,
+        "title": "Dubai, Dubai South"
       },
-      "photos": [
-        {
-          "id": 388172,
-          "hash": "7ee3415165a2fbc3724595bb0a309a9f",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/07/e2/07e202ff90f628bc15d17819bede2821.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/07/e2/07e202ff90f628bc15d17819bede2821.png",
-          "size": 5323221,
-          "src_video": null
-        },
-        {
-          "id": 388155,
-          "hash": "7337c041cc8916241252496922913e5f",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/5b/02/5b025d524c9b6d1c271dcd5f3a1d3685.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/5b/02/5b025d524c9b6d1c271dcd5f3a1d3685.png",
-          "size": 4883719,
-          "src_video": null
-        },
-        {
-          "id": 388156,
-          "hash": "715944b40989deb2bdef5675d6227f0a",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/6f/c1/6fc15a2e71a9e03d0c07e29d4277cc44.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/6f/c1/6fc15a2e71a9e03d0c07e29d4277cc44.png",
-          "size": 3414369,
-          "src_video": null
-        },
-        {
-          "id": 388159,
-          "hash": "7557f7eab703cf7ea624a26a087a4e6a",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/9e/29/9e2968679286f35c7df0b3d0b2945c67.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/9e/29/9e2968679286f35c7df0b3d0b2945c67.png",
-          "size": 5164659,
-          "src_video": null
-        },
-        {
-          "id": 388166,
-          "hash": "90624ae25f2fda8c5405a8196215420e",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/48/b8/48b876d8d5d7e603a3d21d3cb1ee9ba5.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/48/b8/48b876d8d5d7e603a3d21d3cb1ee9ba5.png",
-          "size": 4530918,
-          "src_video": null
-        },
-        {
-          "id": 388168,
-          "hash": "56db5b3ef2ebe16cbc9953466197284c",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/c5/1d/c51dd7fae425d683ebb2b5145380f57d.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/c5/1d/c51dd7fae425d683ebb2b5145380f57d.jpg",
-          "size": 1015628,
-          "src_video": null
-        },
-        {
-          "id": 388169,
-          "hash": "7d138c39adf5faedc0dea2667d18f1e7",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/76/05/76058039b586242db35413624bff1719.jpg",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/76/05/76058039b586242db35413624bff1719.jpg",
-          "size": 1039398,
-          "src_video": null
-        },
-        {
-          "id": 388171,
-          "hash": "a5533560e1901666122093bbb2498f84",
-          "src": "https://files.alnair.ae/uploads/gallery_photo/2025/6/34/f4/34f41e38447c1aa9c6622e8d69002777.png",
-          "logo": "https://files.alnair.ae/uploads/presentation/2025/6/34/f4/34f41e38447c1aa9c6622e8d69002777.png",
-          "size": 3611269,
-          "src_video": null
-        }
-      ],
+      "photos": [],
       "statistics": {
         "transactions": {
-          "111": 5,
-          "112": 9,
-          "113": 3
+          "110": 32,
+          "111": 24,
+          "113": 1
         },
         "rents": null,
         "total": {
-          "count": 25,
-          "price_from": 2501635,
-          "price_to": 6825752,
-          "price_m2_from": 21689,
-          "price_m2_to": 36513,
-          "units_count": 65,
+          "count": 543,
+          "price_from": 710000,
+          "price_to": 17225000,
+          "price_m2_from": 14976,
+          "price_m2_to": 55677,
+          "units_count": 3477,
           "units_resale_count": 0,
-          "units_area_mt": "8967.54",
-          "units_max_floor": 11
+          "units_area_mt": "177623.92",
+          "units_max_floor": 17
         },
         "units": {
+          "110": {
+            "count": 4,
+            "price_from": 710000,
+            "price_to": 710000,
+            "price_m2_from": 20993,
+            "price_m2_to": 20993,
+            "area_from": 33.82,
+            "area_to": 33.82
+          },
           "111": {
-            "count": 2,
-            "price_from": 2501635,
-            "price_to": 2585823,
-            "price_m2_from": 32903,
-            "price_m2_to": 36513,
-            "area_from": 70.82,
-            "area_to": 76.03
+            "count": 291,
+            "price_from": 1230000,
+            "price_to": 1338000,
+            "price_m2_from": 14976,
+            "price_m2_to": 20003,
+            "area_from": 66.89,
+            "area_to": 82.13
           },
           "112": {
-            "count": 18,
-            "price_from": 3413463,
-            "price_to": 6825752,
-            "price_m2_from": 21689,
-            "price_m2_to": 33595,
-            "area_from": 106.94,
-            "area_to": 314.71
+            "count": 163,
+            "price_from": 2414000,
+            "price_to": 2529000,
+            "price_m2_from": 20796,
+            "price_m2_to": 25089,
+            "area_from": 100.8,
+            "area_to": 121.61
           },
           "113": {
-            "count": 5,
-            "price_from": 3863790,
-            "price_to": 4570891,
-            "price_m2_from": 27126,
-            "price_m2_to": 30215,
-            "area_from": 142.44,
-            "area_to": 151.28
+            "count": 25,
+            "price_from": 3156000,
+            "price_to": 3156000,
+            "price_m2_from": 21500,
+            "price_m2_to": 21515,
+            "area_from": 146.69,
+            "area_to": 146.79
+          },
+          "164": {
+            "count": 60,
+            "price_from": 3102000,
+            "price_to": 17225000,
+            "price_m2_from": 45929,
+            "price_m2_to": 55677,
+            "area_from": 63.64,
+            "area_to": 369.16
+          }
+        }
+      }
+    },
+    {
+      "id": 5761,
+      "city_id": 1,
+      "slug": "6942beae3423b-azizi-venice-12",
+      "weight": -106,
+      "title": "Azizi Venice 12",
+      "type": "project",
+      "latitude": 24.835212956154,
+      "longitude": 55.138647334927,
+      "logo": {
+        "id": 521975,
+        "hash": "1bb87d41d15fe27b500a4bfcde01bb0e",
+        "src": "https://files.alnair.ae/uploads/2025/12/65/15/6515730693152056c8be58541674461e.png",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/12/65/15/6515730693152056c8be58541674461e.png"
+      },
+      "cover": {
+        "id": 521980,
+        "hash": "8b1fb84271d790b34f9de35ed1aea92a",
+        "src": "https://files.alnair.ae/uploads/2025/12/31/17/31177fdc016013ec845fadc21e5e0afd.jpg",
+        "logo": "https://files.alnair.ae/uploads/logo/2025/12/31/17/31177fdc016013ec845fadc21e5e0afd.jpg"
+      },
+      "construction_percent": "10.46",
+      "construction_inspection_date": "2027-09-25 11:11:34",
+      "construction_percent_out_of_plan": -29.63,
+      "agent_fee_value": "7.00",
+      "builder": "Azizi",
+      "catalogs": {
+        "project_badges": [
+          366
+        ],
+        "project_sales_status": [
+          5
+        ]
+      },
+      "district": {
+        "id": 249,
+        "title": "Dubai, Dubai South"
+      },
+      "photos": [],
+      "statistics": {
+        "transactions": {
+          "110": 62,
+          "111": 46,
+          "112": 3,
+          "113": 1
+        },
+        "rents": null,
+        "total": {
+          "count": 472,
+          "price_from": 785000,
+          "price_to": 15315000,
+          "price_m2_from": 16451,
+          "price_m2_to": 48394,
+          "units_count": 1428,
+          "units_resale_count": 0,
+          "units_area_mt": "92365.03",
+          "units_max_floor": 18
+        },
+        "units": {
+          "110": {
+            "count": 150,
+            "price_from": 785000,
+            "price_to": 785000,
+            "price_m2_from": 23280,
+            "price_m2_to": 23468,
+            "area_from": 33.45,
+            "area_to": 33.72
+          },
+          "111": {
+            "count": 141,
+            "price_from": 1230000,
+            "price_to": 1284000,
+            "price_m2_from": 16855,
+            "price_m2_to": 19944,
+            "area_from": 64.38,
+            "area_to": 76.18
+          },
+          "112": {
+            "count": 116,
+            "price_from": 2414000,
+            "price_to": 2529000,
+            "price_m2_from": 16557,
+            "price_m2_to": 23709,
+            "area_from": 106.67,
+            "area_to": 149.3
+          },
+          "113": {
+            "count": 44,
+            "price_from": 3156000,
+            "price_to": 3156000,
+            "price_m2_from": 16451,
+            "price_m2_to": 19501,
+            "area_from": 161.84,
+            "area_to": 191.84
+          },
+          "164": {
+            "count": 21,
+            "price_from": 3287000,
+            "price_to": 15315000,
+            "price_m2_from": 35194,
+            "price_m2_to": 48394,
+            "area_from": 72.93,
+            "area_to": 349.69
           }
         }
       }
@@ -7486,7 +7486,7 @@
         "transactions": null,
         "rents": null,
         "total": {
-          "count": 33,
+          "count": 36,
           "price_from": 4057383,
           "price_to": 5831408,
           "price_m2_from": 17760,
@@ -7498,7 +7498,7 @@
         },
         "villas": {
           "445": {
-            "count": 33,
+            "count": 36,
             "price_from": 4057383,
             "price_to": 5831408,
             "price_m2_from": 17760,
@@ -8621,9 +8621,9 @@
         "transactions": null,
         "rents": null,
         "total": {
-          "count": 16,
+          "count": 15,
           "price_from": 6718888,
-          "price_to": 8537888,
+          "price_to": 8262888,
           "price_m2_from": 20598,
           "price_m2_to": 22033,
           "units_count": 397,
@@ -8633,9 +8633,9 @@
         },
         "villas": {
           "462": {
-            "count": 16,
+            "count": 15,
             "price_from": 6718888,
-            "price_to": 8537888,
+            "price_to": 8262888,
             "price_m2_from": 20598,
             "price_m2_to": 22033,
             "area_from": 310.3,
@@ -8718,9 +8718,9 @@
         "transactions": null,
         "rents": null,
         "total": {
-          "count": 21,
+          "count": 20,
           "price_from": 6720888,
-          "price_to": 8703888,
+          "price_to": 8645888,
           "price_m2_from": 20539,
           "price_m2_to": 22267,
           "units_count": 383,
@@ -8730,9 +8730,9 @@
         },
         "villas": {
           "462": {
-            "count": 21,
+            "count": 20,
             "price_from": 6720888,
-            "price_to": 8703888,
+            "price_to": 8645888,
             "price_m2_from": 20539,
             "price_m2_to": 22267,
             "area_from": 310.3,

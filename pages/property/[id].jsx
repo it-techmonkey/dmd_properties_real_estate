@@ -494,6 +494,8 @@ export default function PropertyDetail() {
                   <img
                     src={images[selectedImageIndex]}
                     alt={property.title}
+                    loading="eager"
+                    decoding="async"
                     className="w-full h-full object-cover object-center"
                     onError={(e) => {
                       e.target.onerror = null;
@@ -518,6 +520,8 @@ export default function PropertyDetail() {
                         <img
                           src={img}
                           alt={`Thumbnail ${index + 1}`}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             e.target.onerror = null;
