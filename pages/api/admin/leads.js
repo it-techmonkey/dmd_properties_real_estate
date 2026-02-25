@@ -1,6 +1,6 @@
 import sql from '../../../lib/db';
 import { verifyToken } from '../../../lib/auth';
-import { initializeDatabase } from '../migrations/init';
+
 
 // Middleware to check admin auth
 function checkAuth(req) {
@@ -24,7 +24,6 @@ export default async function handler(req, res) {
 
   // Ensure tables/columns exist before handling requests
   try {
-    await initializeDatabase();
   } catch (err) {
     console.error('DB init failed:', err);
     return res.status(500).json({ error: 'Database initialization failed' });

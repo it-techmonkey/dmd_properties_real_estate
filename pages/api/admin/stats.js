@@ -1,6 +1,5 @@
 import sql from '../../../lib/db';
 import { verifyToken } from '../../../lib/auth';
-import { initializeDatabase } from '../migrations/init';
 
 // Middleware to check admin auth
 function checkAuth(req) {
@@ -27,43 +26,42 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Initialize database (creates tables if they don't exist)
-    await initializeDatabase();
+    // Run all queries in parallel for maximum speed
+    const [
+      totalLeads,
+      hotLeads,
+      warmLeads,
+      lostLeads,
+      totalEnquiries,
+      recentLeads,
+    ] = await Promise.all([
+      sql`SELECT COUNT(*)::int AS count FROM leads`,
+      sql`SELECT COUNT(*)::int AS count FROM leads WHERE status = 'HOT'`,
+      sql`SELECT COUNT(*)::int AS count FROM leads WHERE status = 'WARM'`,
+      sql`SELECT COUNT(*)::int AS count FROM leads WHERE status = 'COLD'`,
+      sql`SELECT COUNT(*)::int AS count FROM general_enquiries`,
+      sql`
+        SELECT id, name, phone, email, project_name, price, status, created_at
+        FROM leads
+        ORDER BY created_at DESC
+        LIMIT 5
+      `,
+    ]);
 
-    // Get lead statistics
-    const totalLeads = await sql`SELECT COUNT(*) as count FROM leads`;
-    const hotLeads = await sql`SELECT COUNT(*) as count FROM leads WHERE status = 'HOT'`;
-    const warmLeads = await sql`SELECT COUNT(*) as count FROM leads WHERE status = 'WARM'`;
-    const lostLeads = await sql`SELECT COUNT(*) as count FROM leads WHERE status = 'COLD'`;
-    
-    // Clients unified into general_enquiries
-    const totalClients = await sql`SELECT COUNT(*) as count FROM general_enquiries`;
-    
-    // Get enquiry count
-    const totalEnquiries = await sql`SELECT COUNT(*) as count FROM general_enquiries`;
-    
-    // Get recent leads (last 5)
-    const recentLeads = await sql`
-      SELECT id, name, phone, email, project_name, price, status, created_at 
-      FROM leads 
-      ORDER BY created_at DESC 
-      LIMIT 5
-    `;
+    const total = totalLeads[0]?.count || 0;
+    const hot = hotLeads[0]?.count || 0;
+    const warm = warmLeads[0]?.count || 0;
+    const lost = lostLeads[0]?.count || 0;
+    const enquiries = totalEnquiries[0]?.count || 0;
 
-    const total = parseInt(totalLeads[0].count);
-    const hot = parseInt(hotLeads[0].count);
-    const warm = parseInt(warmLeads[0].count);
-    const lost = parseInt(lostLeads[0].count);
-    const clients = parseInt(totalClients[0].count);
-    const enquiries = parseInt(totalEnquiries[0].count);
-
+    res.setHeader('Cache-Control', 'private, max-age=30'); // cache 30s on client
     res.status(200).json({
       stats: {
         total,
         hot,
         warm,
         lost,
-        clients,
+        clients: enquiries,
         enquiries,
         conversionRate: total > 0 ? ((hot / total) * 100).toFixed(1) : 0,
         lostRate: total > 0 ? ((lost / total) * 100).toFixed(1) : 0,

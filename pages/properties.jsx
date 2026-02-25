@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
-import { fetchProperties, fetchFilteredProperties, getTotalPropertyCount, cleanText } from '../lib/api';
+import { fetchProjectsFromAlnair, filterAlnairProjects, cleanText } from '../lib/api';
 
 const ITEMS_PER_PAGE = 12;
 
@@ -24,9 +24,49 @@ const formatPrice = (price) => {
 
 // Property Card Component
 function PropertyCard({ property }) {
-  const imageUrl = property.image_urls && property.image_urls.length > 0 
-    ? property.image_urls[0] 
-    : '/Villas/Image.webp';
+  // Map Alnair fields to our display fields
+  // Alnair API fields: id, title, type, cover, photos, statistics.units[], builder
+  const id = property.id;
+  const title = property.title || 'Unnamed Property';
+  
+  // Get image from cover or photos array
+  let imageUrl = '/Villas/Image.webp';
+  if (property.cover?.src) {
+    imageUrl = property.cover.src;
+  } else if (property.photos && property.photos.length > 0 && property.photos[0].src) {
+    imageUrl = property.photos[0].src;
+  }
+  
+  const description = property.description || property.shortDescription || '';
+  
+  // Get price from statistics.total.price_from (the actual Alnair API shape)
+  // statistics.units is a keyed object like { "110": { price_from, count, ... }, "112": {...} }
+  // statistics.total has the aggregate min price across all unit types
+  let minPrice = 0;
+  if (property.statistics?.total?.price_from) {
+    minPrice = property.statistics.total.price_from;
+  } else if (property.statistics?.units) {
+    // Fallback: find the minimum price_from across all unit types
+    const unitValues = Object.values(property.statistics.units);
+    if (unitValues.length > 0) {
+      const prices = unitValues.map(u => u.price_from).filter(Boolean);
+      if (prices.length > 0) minPrice = Math.min(...prices);
+    }
+  }
+  
+  // Get bedroom info — unit type keys map to bedroom counts
+  // 110 = Studio/Apartment, 111 = 1BR, 112 = 2BR, 113 = 3BR, etc.
+  let bedrooms = null;
+  if (property.statistics?.units) {
+    const unitKeys = Object.keys(property.statistics.units);
+    if (unitKeys.length > 0) {
+      // Map the first unit type key to a bedroom label
+      const unitTypeMap = { '110': 'Studio', '111': '1BR', '112': '2BR', '113': '3BR', '114': '4BR', '115': '5BR+' };
+      bedrooms = unitTypeMap[unitKeys[0]] || null;
+    }
+  }
+  
+  const propertyType = property.type;
 
   // Truncate description
   const truncateText = (text, maxLength = 80) => {
@@ -55,11 +95,11 @@ function PropertyCard({ property }) {
   return (
     <div className="bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/10 hover:border-white/20 transition-all">
       {/* Image */}
-      <Link href={`/property/${property.id}`}>
+      <Link href={`/property/${id}`}>
         <div className="relative w-full h-[200px] overflow-hidden cursor-pointer">
           <img
             src={imageUrl}
-            alt={property.title}
+            alt={title}
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             onError={(e) => {
               e.target.onerror = null;
@@ -72,17 +112,17 @@ function PropertyCard({ property }) {
       {/* Content */}
       <div className="p-5">
         {/* Title */}
-        <Link href={`/property/${property.id}`}>
+        <Link href={`/property/${id}`}>
           <h3 className="text-white text-lg font-semibold mb-2 line-clamp-2 min-h-[56px] hover:text-blue-400 transition-colors cursor-pointer">
-            {property.title || property.project_name}
+            {title}
           </h3>
         </Link>
         
         {/* Description */}
         <p className="text-gray-400 text-sm mb-3 min-h-[40px]">
-          {truncateText(property.description || property.developer || '')}
-          {property.description && property.description.length > 80 && (
-            <Link href={`/property/${property.id}`} className="text-amber-400 ml-1 hover:underline">
+          {truncateText(description)}
+          {description && description.length > 80 && (
+            <Link href={`/property/${id}`} className="text-amber-400 ml-1 hover:underline">
               Read More
             </Link>
           )}
@@ -90,34 +130,34 @@ function PropertyCard({ property }) {
         
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {property.bedrooms && (
+          {bedrooms && (
             <span className="flex items-center gap-1.5 px-3 py-1 bg-white/5 rounded-full text-xs text-gray-300">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M3 7v11a2 2 0 002 2h14a2 2 0 002-2V7"/>
                 <path d="M21 7V5a2 2 0 00-2-2H5a2 2 0 00-2 2v2"/>
                 <path d="M3 12h18"/>
               </svg>
-              {getBedroomLabel(property.bedrooms)}
+              {getBedroomLabel(bedrooms)}
             </span>
           )}
-          {property.type && typeof property.type === 'string' && (
+          {propertyType && typeof propertyType === 'string' && (
             <span className="flex items-center gap-1.5 px-3 py-1 bg-white/5 rounded-full text-xs text-gray-300">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
                 <polyline points="9,22 9,12 15,12 15,22"/>
               </svg>
-              {property.type.toUpperCase()}
+              {propertyType.toUpperCase()}
             </span>
           )}
         </div>
         
         {/* Price */}
         <p className="text-white text-xl font-bold mb-4">
-          AED {formatPrice(property.min_price)}
+          AED {formatPrice(minPrice)}
         </p>
         
         {/* View Details Button */}
-        <Link href={`/property/${property.id}`}>
+        <Link href={`/property/${id}`}>
           <button className="w-full py-3 rounded-lg bg-[#1a1a1a] border border-white/20 text-white text-sm font-medium transition-all hover:bg-white/10">
             View Property Details
           </button>
@@ -226,7 +266,8 @@ function MapModal({ properties, isOpen, onClose }) {
     properties.forEach((property) => {
       if (property.latitude && property.longitude) {
           try {
-            const developerLogo = property.developer_logo || property.Developer?.Company?.logo;
+            // Get developer logo from Alnair logo object
+            const developerLogo = property.logo?.src;
         let icon;
         if (developerLogo) {
           icon = L.divIcon({
@@ -283,14 +324,19 @@ function MapModal({ properties, isOpen, onClose }) {
         // Create marker
         const marker = L.marker([property.latitude, property.longitude], { icon });
 
-        // Create popup content
+        // Create popup content - using Alnair field names
+        const projectName = property.title || 'Property';
+        const address = property.district?.title || '';
+        const city = 'Dubai'; // Alnair API is Dubai-centric
+        const unitPrice = property.statistics?.total?.price_from || 0;
+        
         const popupContent = `
           <div style="padding: 8px; min-width: 200px; background: white; border-radius: 8px;">
             <a href="/property/${property.id}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
               <h3 style="margin: 0; font-size: 14px; font-weight: 600; color: #1f2937; cursor: pointer; transition: color 0.2s; flex: 1;"
                   onmouseover="this.style.color='#3b82f6'" 
                   onmouseout="this.style.color='#1f2937'">
-                ${property.title}
+                ${projectName}
               </h3>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" style="flex-shrink: 0;">
                 <path d="M10 19H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h4"></path>
@@ -299,10 +345,10 @@ function MapModal({ properties, isOpen, onClose }) {
               </svg>
             </a>
             <p style="margin: 0 0 4px 0; font-size: 12px; color: #6b7280;">
-              ${property.address || property.locality || ''}, ${property.city || ''}
+              ${address}, ${city}
             </p>
             <p style="margin: 0; font-size: 12px; color: #374151; font-weight: 500;">
-              AED ${property.min_price ? (property.min_price >= 1000000 ? (property.min_price / 1000000).toFixed(1) + 'M' : property.min_price >= 1000 ? (property.min_price / 1000).toFixed(0) + 'K' : property.min_price.toLocaleString()) : 'N/A'}
+              AED ${unitPrice >= 1000000 ? (unitPrice / 1000000).toFixed(1) + 'M' : unitPrice >= 1000 ? (unitPrice / 1000).toFixed(0) + 'K' : unitPrice.toLocaleString()}
             </p>
           </div>
         `;
@@ -537,17 +583,17 @@ export default function PropertiesPage() {
     return price.toLocaleString();
   };
 
-  // Fetch properties with pagination
+  // Fetch properties with pagination using Alnair API
   const fetchPropertiesData = async (page, search, type, sort, devId, priceMin, priceMax, city) => {
     try {
       setLoading(true);
       setError(null);
       
-      // Build filters
-      const filters = {
-        page,
-        limit: ITEMS_PER_PAGE,
-      };
+      // Fetch all projects from Alnair (we'll paginate client-side for now)
+      let projects = await fetchProjectsFromAlnair();
+      
+      // Build filters object
+      const filters = {};
       
       // Add search filter if provided
       if (search && search.trim()) {
@@ -566,63 +612,41 @@ export default function PropertiesPage() {
 
       // Add price filters
       if (priceMin) {
-        filters.min_price = parseInt(priceMin);
+        filters.minPrice = parseInt(priceMin);
       }
       if (priceMax) {
-        filters.max_price = parseInt(priceMax);
+        filters.maxPrice = parseInt(priceMax);
       }
 
-      // Add sorting
+      // Add developer filter if provided (comes from ?developer=Name URL param)
+      if (devId) {
+        filters.developerName = decodeURIComponent(devId);
+      }
+
+      // Apply filters using utility function
+      projects = await filterAlnairProjects(projects, filters);
+      
+      // Apply sorting - using correct Alnair field names
       if (sort === 'price-low') {
-        filters.sort_by = 'min_price';
-        filters.sort_order = 'asc';
+        projects.sort((a, b) => (a.statistics?.total?.price_from || 0) - (b.statistics?.total?.price_from || 0));
       } else if (sort === 'price-high') {
-        filters.sort_by = 'min_price';
-        filters.sort_order = 'desc';
+        projects.sort((a, b) => (b.statistics?.total?.price_from || 0) - (a.statistics?.total?.price_from || 0));
       } else if (sort === 'name') {
-        filters.sort_by = 'title';
-        filters.sort_order = 'asc';
+        projects.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
       } else {
-        // Default to newest (created_at descending)
-        filters.sort_by = 'created_at';
-        filters.sort_order = 'desc';
+        // Default to newest (most recently updated first) - Alnair doesn't have updatedAt, use construction_percent as proxy
+        projects.sort((a, b) => (b.weight || 0) - (a.weight || 0));
       }
+
+      // Handle pagination client-side
+      const totalResults = projects.length;
+      const totalPagesCalculated = Math.ceil(totalResults / ITEMS_PER_PAGE);
+      const offset = (page - 1) * ITEMS_PER_PAGE;
+      const paginatedProjects = projects.slice(offset, offset + ITEMS_PER_PAGE);
       
-      // API mode — use local proxy to avoid CORS
-      const url = `/api/projects?page=${page}&limit=12`;
-      
-      // Build request body for filters (NOT pagination)
-      const requestBody = {};
-      if (filters.search) requestBody.search = filters.search;
-      if (filters.type) requestBody.type = filters.type;
-      if (filters.city) requestBody.city = filters.city;
-      if (filters.sort_by) requestBody.sort_by = filters.sort_by;
-      if (filters.sort_order) requestBody.sort_order = filters.sort_order;
-      if (devId) requestBody.developer_id = devId;
-      if (filters.min_price) requestBody.min_price = filters.min_price;
-      if (filters.max_price) requestBody.max_price = filters.max_price;
-      
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestBody),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to fetch properties');
-      }
-      
-      const result = await response.json();
-      
-      if (result.success) {
-        setProperties(result.data);
-        setTotalPages(result.pagination.total_pages);
-        setTotalCount(result.pagination.total);
-      } else {
-        throw new Error(result.message || 'Failed to load properties');
-      }
+      setProperties(paginatedProjects);
+      setTotalPages(totalPagesCalculated);
+      setTotalCount(totalResults);
     } catch (err) {
       console.error('Error fetching properties:', err);
       setError(err.message);
@@ -634,47 +658,34 @@ export default function PropertiesPage() {
   // Fetch all properties for map (without pagination, but with current filters)
   const fetchAllForMap = useCallback(async (search = '', type = 'all', sort = 'newest', devId = null, priceMin = '', priceMax = '', city = 'all') => {
     try {
-      // Use local proxy to avoid CORS
+      // Fetch all projects from Alnair
+      let projects = await fetchProjectsFromAlnair();
       
-      // Build request body with current filters
-      const requestBody = {};
-      if (search && search.trim()) requestBody.search = search.trim();
-      if (type && type !== 'all') requestBody.type = type;
-      if (city && city !== 'all') requestBody.city = city;
-      if (devId) requestBody.developer_id = devId;
-      if (priceMin) requestBody.min_price = parseInt(priceMin);
-      if (priceMax) requestBody.max_price = parseInt(priceMax);
+      // Build filters object
+      const filters = {};
+      if (search && search.trim()) filters.search = search.trim();
+      if (type && type !== 'all') filters.type = type;
+      if (city && city !== 'all') filters.city = city;
+      if (priceMin) filters.minPrice = parseInt(priceMin);
+      if (priceMax) filters.maxPrice = parseInt(priceMax);
       
-      // Add sorting
+      if (devId) {
+        filters.developerName = decodeURIComponent(devId);
+      }
+
+      // Apply filters
+      projects = await filterAlnairProjects(projects, filters);
+      
+      // Apply sorting - using correct Alnair field names
       if (sort === 'price-low') {
-        requestBody.sort_by = 'min_price';
-        requestBody.sort_order = 'asc';
+        projects.sort((a, b) => (a.statistics?.total?.price_from || 0) - (b.statistics?.total?.price_from || 0));
       } else if (sort === 'price-high') {
-        requestBody.sort_by = 'min_price';
-        requestBody.sort_order = 'desc';
+        projects.sort((a, b) => (b.statistics?.total?.price_from || 0) - (a.statistics?.total?.price_from || 0));
       } else if (sort === 'name') {
-        requestBody.sort_by = 'title';
-        requestBody.sort_order = 'asc';
-      } else {
-        // Default to newest (created_at descending)
-        requestBody.sort_by = 'created_at';
-        requestBody.sort_order = 'desc';
+        projects.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
       }
       
-      const response = await fetch(`/api/projects?page=1&limit=100`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestBody),
-      });
-      
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success) {
-          setAllProperties(result.data);
-        }
-      }
+      setAllProperties(projects);
     } catch (err) {
       console.error('Error fetching all properties for map:', err);
     }
@@ -726,12 +737,24 @@ export default function PropertiesPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Handle search
+  // Handle search (form submit — Enter key)
   const handleSearch = (e) => {
     e.preventDefault();
     setCurrentPage(1);
     fetchPropertiesData(1, searchQuery, filterType, sortBy, developerId, minPrice, maxPrice, filterCity);
+    fetchAllForMap(searchQuery, filterType, sortBy, developerId, minPrice, maxPrice, filterCity);
   };
+
+  // Real-time search — debounced 150ms after user stops typing
+  useEffect(() => {
+    if (!initialLoadDone) return;
+    const timer = setTimeout(() => {
+      setCurrentPage(1);
+      fetchPropertiesData(1, searchQuery, filterType, sortBy, developerId, minPrice, maxPrice, filterCity);
+      fetchAllForMap(searchQuery, filterType, sortBy, developerId, minPrice, maxPrice, filterCity);
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [searchQuery]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Handle price filter change
   const handlePriceFilter = () => {
@@ -795,8 +818,20 @@ export default function PropertiesPage() {
                     placeholder="Search for a Property by Name"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3.5 bg-[#1a1a1a] border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/40 transition-colors"
+                    className="w-full pl-12 pr-10 py-3.5 bg-[#1a1a1a] border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-white/40 transition-colors"
                   />
+                  {searchQuery && (
+                    <button
+                      type="button"
+                      onClick={() => setSearchQuery('')}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                      aria-label="Clear search"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                      </svg>
+                    </button>
+                  )}
                 </div>
               </form>
               
@@ -901,7 +936,7 @@ export default function PropertiesPage() {
               <div className="text-center py-20">
                 <p className="text-red-400 text-lg mb-4">Failed to load properties</p>
                 <button
-                  onClick={() => fetchProperties(currentPage, searchQuery)}
+                  onClick={() => fetchPropertiesData(currentPage, searchQuery, filterType, sortBy, developerId, minPrice, maxPrice, filterCity)}
                   className="px-6 py-3 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-colors"
                 >
                   Try Again

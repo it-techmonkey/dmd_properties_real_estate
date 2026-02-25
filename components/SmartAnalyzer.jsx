@@ -4,7 +4,7 @@ import { useMemo, useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { fetchFilteredProperties, cleanText } from '../lib/api';
+import { fetchProjectsFromAlnair, filterAlnairProjects, cleanText } from '../lib/api';
 
 const steps = [
   {
@@ -129,21 +129,25 @@ function AnalyzerMap({ filters, onSelectProperty }) {
         setLoading(true);
         setFetchError(null);
         
-        // Build the request body based on filters
-        const requestBody = { limit: 100 };
+        // Fetch from Alnair
+        let projects = await fetchProjectsFromAlnair();
         
-        // Map budget filter to API price filters
+        // Build filters based on budget selection
+        const alnairFilters = {};
+        
+        // Map budget filter to Alnair price filters
         if (filters.budget === 'budget-low') {
-          requestBody.max_price = 800000;
+          alnairFilters.maxPrice = 800000;
         } else if (filters.budget === 'budget-mid') {
-          requestBody.min_price = 800000;
-          requestBody.max_price = 1500000;
+          alnairFilters.minPrice = 800000;
+          alnairFilters.maxPrice = 1500000;
         } else if (filters.budget === 'budget-high') {
-          requestBody.min_price = 3000000;
+          alnairFilters.minPrice = 3000000;
         }
         
-        const data = await fetchFilteredProperties(requestBody);
-        setProperties(data);
+        // Apply filters
+        const filteredProjects = await filterAlnairProjects(projects, alnairFilters);
+        setProperties(filteredProjects.slice(0, 100)); // Limit to 100
       } catch (error) {
         console.error('Error fetching properties:', error);
         setFetchError(error.message);
@@ -261,9 +265,10 @@ function AnalyzerMap({ filters, onSelectProperty }) {
       // Add markers for each property
       filtered.forEach((property) => {
         if (property.latitude && property.longitude) {
-          const isRecommended = property.min_price < 1000000;
+          // Alnair uses statistics.total.price_from for aggregate price
+          const isRecommended = (property.statistics?.total?.price_from || 0) < 1000000;
           const borderColor = isRecommended ? '#F59E0B' : '#3B82F6';
-          const developerLogo = property.developer_logo || property.Developer?.Company?.logo;
+          const developerLogo = property.logo?.src; // Alnair project logo
 
           // Create custom icon
           let icon;
@@ -489,47 +494,56 @@ function AnalyzerMap({ filters, onSelectProperty }) {
               <Link href={`/property/${selected.id}`}>
                 <h3 className="text-white font-semibold text-xl mb-1 hover:text-blue-400 transition-colors cursor-pointer">{selected.title}</h3>
               </Link>
-              <p className="text-white/60 text-sm">{selected.address}, {selected.city}</p>
+              <p className="text-white/60 text-sm">{selected.district?.title || ''}{selected.district?.title ? ', Dubai' : 'Dubai'}</p>
             </div>
 
-            {/* Images Gallery */}
-            {selected.image_urls && selected.image_urls.length > 0 && (
+            {/* Images Gallery — Alnair uses cover + photos[] */}
+            {(selected.cover?.src || (selected.photos && selected.photos.length > 0)) && (
               <div className="flex gap-3 overflow-x-auto pb-4 mb-4 scrollbar-thin scrollbar-thumb-white/20">
-                {selected.image_urls.slice(0, 5).map((url, index) => (
-                  <div key={index} className="relative flex-shrink-0 w-48 h-32 rounded-lg overflow-hidden">
-                    <img 
-                      src={url} 
-                      alt={`${selected.title} - ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
+                {[selected.cover?.src, ...(selected.photos || []).map(p => p.src)]
+                  .filter(Boolean)
+                  .slice(0, 5)
+                  .map((url, index) => (
+                    <div key={index} className="relative flex-shrink-0 w-48 h-32 rounded-lg overflow-hidden">
+                      <img
+                        src={url}
+                        alt={`${selected.title} - ${index + 1}`}
+                        className="w-full h-full object-cover"
+                        onError={(e) => { e.target.onerror = null; e.target.src = '/Villas/Image.webp'; }}
+                      />
+                    </div>
+                  ))}
               </div>
             )}
 
-            {/* Property Details Grid */}
+            {/* Property Details Grid — mapped to Alnair fields */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
               <div className="bg-white/5 rounded-lg p-3">
                 <p className="text-white/50 text-xs uppercase mb-1">Starting Price</p>
-                <p className="text-white font-semibold">AED {selected.min_price >= 1000000 ? (selected.min_price / 1000000).toFixed(1) + 'M' : selected.min_price >= 1000 ? (selected.min_price / 1000).toFixed(0) + 'K' : selected.min_price?.toLocaleString()}</p>
-              </div>
-              <div className="bg-white/5 rounded-lg p-3">
-                <p className="text-white/50 text-xs uppercase mb-1">Bedrooms</p>
                 <p className="text-white font-semibold">
-                  {selected.min_bedrooms === selected.max_bedrooms 
-                    ? selected.min_bedrooms 
-                    : `${selected.min_bedrooms} - ${selected.max_bedrooms}`}
+                  {(() => {
+                    const p = selected.statistics?.total?.price_from || 0;
+                    return p >= 1000000 ? `AED ${(p/1000000).toFixed(1)}M` : p >= 1000 ? `AED ${(p/1000).toFixed(0)}K` : p ? `AED ${p.toLocaleString()}` : 'N/A';
+                  })()}
                 </p>
               </div>
               <div className="bg-white/5 rounded-lg p-3">
-                <p className="text-white/50 text-xs uppercase mb-1">Size</p>
+                <p className="text-white/50 text-xs uppercase mb-1">Units</p>
                 <p className="text-white font-semibold">
-                  {selected.min_sq_ft?.toLocaleString()} - {selected.max_sq_ft?.toLocaleString()} sq ft
+                  {selected.statistics?.total?.units_count || 'N/A'}
                 </p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-3">
+                <p className="text-white/50 text-xs uppercase mb-1">Developer</p>
+                <p className="text-white font-semibold">{selected.builder || 'N/A'}</p>
               </div>
               <div className="bg-white/5 rounded-lg p-3">
                 <p className="text-white/50 text-xs uppercase mb-1">Handover</p>
-                <p className="text-white font-semibold">{selected.handover_year || 'TBA'}</p>
+                <p className="text-white font-semibold">
+                  {selected.construction_inspection_date
+                    ? new Date(selected.construction_inspection_date).getFullYear()
+                    : 'TBA'}
+                </p>
               </div>
             </div>
 

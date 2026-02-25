@@ -1,6 +1,6 @@
 import sql from '../../../lib/db';
 import { verifyToken } from '../../../lib/auth';
-import { initializeDatabase } from '../migrations/init';
+
 
 // Middleware to check admin auth
 function checkAuth(req) {
@@ -50,7 +50,6 @@ async function getEnquiries(req, res) {
   const offset = (page - 1) * pageSize;
 
   // Initialize database (creates table if doesn't exist)
-  await initializeDatabase();
 
   const filters = [];
 
@@ -118,7 +117,6 @@ async function createEnquiry(req, res) {
     return res.status(400).json({ error: 'Email and phone are required' });
   }
 
-  await initializeDatabase();
 
   const result = await sql`
     INSERT INTO general_enquiries (

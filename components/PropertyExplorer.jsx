@@ -3,20 +3,34 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { fetchPropertiesWithoutPriority, filterByType, filterByBedrooms } from '../lib/api';
+import { fetchProjectsFromAlnair, filterAlnairProjects } from '../lib/api';
 
+// Alnair API returns type:'project' for everything — match by title keywords
 const categories = [
-  { id: 'luxury-villa', label: 'Luxury Villa', type: 'Villa', bedrooms: null },
-  { id: '3bhk', label: '3 BHK', type: null, bedrooms: 'Three' },
-  { id: '2bhk', label: '2 BHK', type: null, bedrooms: 'Two' },
+  { id: 'luxury-villa', label: 'Luxury Villa', keyword: ['villa', 'villas'] },
+  { id: '3bhk', label: '3 BHK', unitKey: '113' },  // 113=3BR in Alnair stats
+  { id: '2bhk', label: '2 BHK', unitKey: '112' },  // 112=2BR
 ];
 
 // Property Card Component with custom border colors
 function PropertyCard({ property }) {
-  // Get the first image or use a fallback
-  const imageUrl = property.image_urls && property.image_urls.length > 0 
-    ? property.image_urls[0] 
-    : '/Villas/Image.webp';
+  // Map Alnair fields - correct field names
+  const id = property.id;
+  const title = property.title || 'Unnamed Property';
+  
+  // Get image from cover or photos
+  let imageUrl = '/Villas/Image.webp';
+  if (property.cover?.src) {
+    imageUrl = property.cover.src;
+  } else if (property.photos && property.photos.length > 0 && property.photos[0].src) {
+    imageUrl = property.photos[0].src;
+  }
+  
+  // Get price from statistics.total.price_from (actual Alnair API shape)
+  const minPrice = property.statistics?.total?.price_from
+    || (property.statistics?.units
+      ? Math.min(...Object.values(property.statistics.units).map(u => u.price_from || 0).filter(Boolean))
+      : 0);
   
   // Format price
   const formatPrice = (price) => {
@@ -36,11 +50,11 @@ function PropertyCard({ property }) {
       <div className="h-full rounded-xl overflow-hidden border-t border-l border-white/40 border-r-white/10 border-b-white/10 bg-[#0d1520]" 
            style={{ borderRightColor: 'rgba(255,255,255,0.1)', borderBottomColor: 'rgba(255,255,255,0.1)' }}>
         {/* Image */}
-        <Link href={`/property/${property.id}`}>
+        <Link href={`/property/${id}`}>
           <div className="relative w-full h-[130px] overflow-hidden cursor-pointer">
             <img
               src={imageUrl}
-              alt={property.title}
+              alt={title}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               onError={(e) => {
                 e.target.onerror = null;
@@ -53,19 +67,19 @@ function PropertyCard({ property }) {
         {/* Content */}
         <div className="p-4">
           {/* Property Name */}
-          <Link href={`/property/${property.id}`}>
+          <Link href={`/property/${id}`}>
             <h3 className="text-white text-[20px] font-semibold mb-1 line-clamp-1 hover:text-blue-400 transition-colors cursor-pointer">
-              {property.title || property.project_name}
+              {title}
             </h3>
           </Link>
           
           {/* Price */}
           <p className="text-white/60 text-[15px] mb-3">
-            From AED {formatPrice(property.min_price)}
+            From AED {formatPrice(minPrice)}
           </p>
           
           {/* View Details Button - Black */}
-          <Link href={`/property/${property.id}`}>
+          <Link href={`/property/${id}`}>
             <button className="w-full py-2 rounded-md bg-black border border-white/20 text-white text-[16px] font-medium transition-all hover:bg-white/10">
               View Property Details
             </button>
@@ -192,7 +206,7 @@ function LeafletMapComponent({ properties, categoryId }) {
     
     properties.forEach((property) => {
       if (property.latitude && property.longitude) {
-        const developerLogo = property.developer_logo || property.Developer?.Company?.logo;
+        const developerLogo = property.logo?.src || null; // Alnair uses logo.src
 
         // Create custom icon
         let icon;
@@ -263,6 +277,7 @@ function LeafletMapComponent({ properties, categoryId }) {
           return price.toLocaleString();
         };
 
+        const minPrice = property.statistics?.total?.price_from || 0;
         const popupContent = `
           <div style="padding: 8px; min-width: 200px;">
             <a href="/property/${property.id}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
@@ -273,8 +288,8 @@ function LeafletMapComponent({ properties, categoryId }) {
                 <line x1="15" y1="1" x2="15" y2="8"></line>
               </svg>
             </a>
-            <p style="margin: 0 0 4px 0; font-size: 12px; color: #6b7280;">${property.address || property.locality || ''}, ${property.city || ''}</p>
-            <p style="margin: 0; font-size: 12px; color: #374151; font-weight: 500;">From AED ${formatPrice(property.min_price)}</p>
+            <p style="margin: 0 0 4px 0; font-size: 12px; color: #6b7280;">${property.district?.title || ''}, Dubai</p>
+            <p style="margin: 0; font-size: 12px; color: #374151; font-weight: 500;">From AED ${formatPrice(minPrice)}</p>
           </div>
         `;
 
@@ -384,8 +399,8 @@ export default function PropertyExplorer() {
       try {
         setLoading(true);
         setError(null);
-        const data = await fetchPropertiesWithoutPriority();
-        setProperties(data);
+        const data = await fetchProjectsFromAlnair();
+        setProperties(data || []);
       } catch (err) {
         console.error('Error loading properties:', err);
         setError(err.message);
@@ -404,12 +419,19 @@ export default function PropertyExplorer() {
     
     let filtered = properties;
     
-    if (category.type) {
-      filtered = filterByType(filtered, category.type);
+    // Filter by keyword in title (since Alnair type is always 'project')
+    if (category.keyword) {
+      filtered = filtered.filter(p => {
+        const titleLower = (p.title || '').toLowerCase();
+        return category.keyword.some(kw => titleLower.includes(kw));
+      });
     }
     
-    if (category.bedrooms) {
-      filtered = filterByBedrooms(filtered, category.bedrooms);
+    // Filter by unit type key (statistics.units is a keyed object)
+    if (category.unitKey) {
+      filtered = filtered.filter(p =>
+        p.statistics?.units?.[category.unitKey] != null
+      );
     }
     
     return filtered;

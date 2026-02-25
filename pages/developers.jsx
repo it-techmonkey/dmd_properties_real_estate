@@ -4,17 +4,17 @@ import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import Header from '../components/Header';
-import { fetchAllDevelopers } from '../lib/api';
+import { getDevelopersFromAlnair } from '../lib/api';
 
 const ITEMS_PER_PAGE = 16; // 4x4 grid
 
 // Developer Card Component
 function DeveloperCard({ developer }) {
-  // Get company info from nested Company object
+  // Handle both database and Alnair formats
   const company = developer.Company;
-  const name = company?.name || 'Unknown Developer';
-  const logoUrl = company?.logo || null;
-  const projectCount = developer.project_count || 0;
+  const name = developer.name || company?.name || 'Unknown Developer';
+  const logoUrl = developer.logo || company?.logo || null;
+  const projectCount = developer.projectCount || developer.project_count || 0;
   const developerId = developer.id;
   const [imageError, setImageError] = useState(false);
   
@@ -28,7 +28,7 @@ function DeveloperCard({ developer }) {
   };
   
   return (
-    <Link href={`/properties?developer=${developerId}`}>
+    <Link href={`/properties?developer=${encodeURIComponent(name)}`}>
       <div className="bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/10 hover:border-white/30 transition-all p-6 flex flex-col items-center cursor-pointer hover:bg-[#222] h-[280px]">
         {/* Logo */}
         <div className="w-28 h-28 rounded-full bg-white flex items-center justify-center overflow-hidden mb-4 flex-shrink-0 p-2">
@@ -153,13 +153,13 @@ export default function DevelopersPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Fetch all developers on mount (cached)
+  // Fetch all developers on mount (from Alnair data)
   useEffect(() => {
     const loadDevelopers = async () => {
       try {
         setLoading(true);
         setError(null);
-        const data = await fetchAllDevelopers();
+        const data = await getDevelopersFromAlnair();
         setAllDevelopers(data);
       } catch (err) {
         console.error('Error loading developers:', err);
@@ -172,15 +172,16 @@ export default function DevelopersPage() {
     loadDevelopers();
   }, []);
 
-  // Filter developers based on search
+  // Filter developers based on search (Alnair format uses 'name' field)
   const filteredDevelopers = useMemo(() => {
     if (!searchQuery || !searchQuery.trim()) {
       return allDevelopers;
     }
     const searchLower = searchQuery.toLowerCase().trim();
-    return allDevelopers.filter(dev => 
-      dev.Company?.name && dev.Company.name.toLowerCase().includes(searchLower)
-    );
+    return allDevelopers.filter(dev => {
+      const devName = dev.name || dev.Company?.name || '';
+      return devName.toLowerCase().includes(searchLower);
+    });
   }, [allDevelopers, searchQuery]);
 
   // Calculate pagination

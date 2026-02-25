@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import EnquiryModal from '../../components/EnquiryModal';
-import { fetchPropertyById, cleanText } from '../../lib/api';
+import { fetchProjectDetailsFromAlnair, cleanText } from '../../lib/api';
 
 // Amenity icons mapping
 const amenityIcons = {
@@ -146,6 +146,7 @@ export default function PropertyDetail() {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [L, setL] = useState(null);
   const [showEnquiryModal, setShowEnquiryModal] = useState(false);
+  const [expandDescription, setExpandDescription] = useState(false);
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
 
@@ -204,11 +205,11 @@ export default function PropertyDetail() {
         maxZoom: 19,
       }).addTo(map);
 
-      mapInstanceRef.current = map;
+       mapInstanceRef.current = map;
 
-      // Get developer logo URL
-      const developerLogo = property.developer_logo || property.Developer?.Company?.logo;
-      const markerSize = 50;
+       // Get developer logo URL (Alnair uses companyLogo)
+       const developerLogo = property?.logo?.src;
+       const markerSize = 50;
     
     // Create custom icon
     let icon;
@@ -299,7 +300,8 @@ export default function PropertyDetail() {
         setLoading(true);
         setError(null);
         
-        const foundProperty = await fetchPropertyById(id);
+        // Fetch from Alnair API
+        const foundProperty = await fetchProjectDetailsFromAlnair(id);
         
         if (foundProperty) {
           setProperty(foundProperty);
@@ -343,45 +345,33 @@ export default function PropertyDetail() {
     return bedroomMap[bedrooms] || bedrooms;
   };
 
-  // Get developer name from either direct field or nested Developer object
+  // Get developer name from Alnair data
   const getDeveloperName = () => {
-    if (property?.Developer?.Company?.name) return property.Developer.Company.name;
-    if (property?.developer) return property.developer;
-    return null;
+    // Alnair uses 'builder' field for developer
+    return property?.builder || null;
   };
 
-  // Get developer logo
+  // Get developer logo from Alnair data
   const getDeveloperLogo = () => {
-    if (property?.Developer?.Company?.logo) {
-      let logo = property.Developer.Company.logo;
-      return logo;
-    }
-    return null;
+    // Alnair uses logo object with src property
+    return property?.logo?.src || null;
   };
 
   // Format unit types for display
+  // statistics.units is a keyed object: { "110": {...}, "112": {...} }
+  // Keys: 110=Studio, 111=1BR, 112=2BR, 113=3BR, 114=4BR
   const getUnitTypesDisplay = () => {
-    if (!property?.unit_types || property.unit_types.length === 0) return null;
-    const bedroomMap = {
-      'Studio': 'Studio',
-      'One': '1 BR',
-      'Two': '2 BR',
-      'Three': '3 BR',
-      'Four': '4 BR',
-      'Five': '5 BR',
-      'Six': '6 BR',
-      'Seven': '7 BR',
-    };
-    return property.unit_types.map(ut => bedroomMap[ut] || ut).join(', ');
+    if (!property?.statistics?.units) return null;
+    const unitKeyMap = { '110': 'Studio', '111': '1 BR', '112': '2 BR', '113': '3 BR', '114': '4 BR', '115': '5 BR+' };
+    const keys = Object.keys(property.statistics.units);
+    if (keys.length === 0) return null;
+    const labels = keys.map(k => unitKeyMap[k] || k).join(', ');
+    return labels;
   };
 
-  // Get property type display
+  // Get property type display (Alnair uses 'type')
   const getPropertyTypeDisplay = () => {
-    if (!property?.type) return null;
-    if (Array.isArray(property.type)) {
-      return property.type.join(', ');
-    }
-    return property.type;
+    return property?.type || null;
   };
 
   // Parse payment structure if available
@@ -462,9 +452,15 @@ export default function PropertyDetail() {
     );
   }
 
-  const images = property.image_urls && property.image_urls.length > 0 
-    ? property.image_urls 
-    : ['/Villas/Image.webp'];
+  // Build images array from Alnair cover + photos fields
+  const images = (() => {
+    const imgs = [];
+    if (property.cover?.src) imgs.push(property.cover.src);
+    if (property.photos?.length > 0) {
+      property.photos.forEach(p => { if (p.src) imgs.push(p.src); });
+    }
+    return imgs.length > 0 ? imgs : ['/Villas/Image.webp'];
+  })();
 
   return (
     <>
@@ -541,10 +537,11 @@ export default function PropertyDetail() {
                   {property.title}
                 </h1>
                 
-                {/* Location */}
-                {(property.locality || property.address) && (
+                {/* Location — Alnair uses district.title */}
+                {(property.district?.title || property.locality || property.address) && (
                   <p className="text-blue-400 text-lg mb-4">
-                    {property.locality || property.address}{property.city ? `, ${property.city}` : ''}
+                    {property.district?.title || property.locality || property.address}
+                    {', Dubai'}
                   </p>
                 )}
                 
@@ -564,29 +561,14 @@ export default function PropertyDetail() {
                 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {(property.min_bedrooms || property.bedrooms) && (
+                  {getUnitTypesDisplay() && (
                     <span className="flex items-center gap-1.5 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M3 7v11a2 2 0 002 2h14a2 2 0 002-2V7"/>
                         <path d="M21 7V5a2 2 0 00-2-2H5a2 2 0 00-2 2v2"/>
                         <path d="M3 12h18"/>
                       </svg>
-                      {getBedroomLabel(property.min_bedrooms || property.bedrooms)}
-                      {property.max_bedrooms && property.max_bedrooms !== property.min_bedrooms && 
-                        ` - ${getBedroomLabel(property.max_bedrooms)}`}
-                    </span>
-                  )}
-                  {property.min_bathrooms && (
-                    <span className="flex items-center gap-1.5 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M4 12h16a1 1 0 011 1v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a1 1 0 011-1z"/>
-                        <path d="M6 12V5a2 2 0 012-2h3v4h6V3h-1"/>
-                        <circle cx="8" cy="19" r="1"/>
-                        <circle cx="16" cy="19" r="1"/>
-                      </svg>
-                      {property.min_bathrooms} Bath
-                      {property.max_bathrooms && property.max_bathrooms !== property.min_bathrooms && 
-                        ` - ${property.max_bathrooms} Bath`}
+                      {getUnitTypesDisplay()}
                     </span>
                   )}
                   {getPropertyTypeDisplay() && (
@@ -598,30 +580,18 @@ export default function PropertyDetail() {
                       {getPropertyTypeDisplay()}
                     </span>
                   )}
-                  {property.category && (
-                    <span className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm ${
-                      property.category === 'Off_plan' 
-                        ? 'bg-orange-500/20 border border-orange-500/30 text-orange-300' 
-                        : 'bg-green-500/20 border border-green-500/30 text-green-300'
-                    }`}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polyline points="12,6 12,12 16,14"/>
-                      </svg>
-                      {property.category === 'Off_plan' ? 'Off Plan' : property.category}
-                    </span>
-                  )}
                 </div>
                 
-                {/* Price */}
+                {/* Price — use statistics.total.price_from (Alnair API shape) */}
                 <div className="mb-6">
                   <p className="text-gray-500 text-sm mb-1">Starting From</p>
                   <p className="text-white text-3xl font-bold">
-                    AED {formatPrice(property.min_price)}
+                    AED {formatPrice(property.statistics?.total?.price_from || 0)}
                   </p>
-                  {property.max_price && property.max_price !== property.min_price && (
+                  {property.statistics?.total?.price_to &&
+                   property.statistics.total.price_to !== property.statistics.total.price_from && (
                     <p className="text-gray-400 text-sm mt-1">
-                      Up to AED {formatPrice(property.max_price)}
+                      Up to AED {formatPrice(property.statistics.total.price_to)}
                     </p>
                   )}
                 </div>
@@ -680,6 +650,68 @@ export default function PropertyDetail() {
             </div>
 
             {/* Full Width Details Grid - Below main content */}
+            
+              {/* Description Section — from /project/look/{slug} */}
+            {property.description && (
+              <div className="mt-8 p-6 bg-white/5 border border-white/10 rounded-xl">
+                <h3 className="text-white text-lg font-semibold mb-4 flex items-center gap-2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14,2 14,8 20,8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10,9 9,9 8,9"/>
+                  </svg>
+                  About This Project
+                </h3>
+                {(() => {
+                  const raw = property.description || '';
+
+                  // Utility: decode HTML entities (2 passes handles double-encoding like &amp;lt;)
+                  const decodeEntities = (str) => str
+                    .replace(/&amp;/g, '&')
+                    .replace(/&lt;/g, '<')
+                    .replace(/&gt;/g, '>')
+                    .replace(/&nbsp;/g, ' ')
+                    .replace(/&quot;/g, '"')
+                    .replace(/&#39;/g, "'")
+                    .replace(/&apos;/g, "'");
+
+                  // Step 1: Decode entities FIRST (must happen before tag stripping)
+                  const decoded = decodeEntities(decodeEntities(raw));
+
+                  // Step 2: Strip all HTML tags (now guaranteed to be real `<` brackets)
+                  const clean = decoded
+                    .replace(/<br\s*\/?>/gi, '\n')
+                    .replace(/<\/p>\s*/gi, '\n\n')
+                    .replace(/<\/h[1-6]>\s*/gi, '\n\n')
+                    .replace(/<\/li>\s*/gi, '\n')
+                    .replace(/<li[^>]*>/gi, '\u2022 ')
+                    .replace(/<[^>]+>/g, '')
+                    .replace(/\n{3,}/g, '\n\n')
+                    .trim();
+
+                  const PREVIEW_CHARS = 500;
+                  const isLong = clean.length > PREVIEW_CHARS;
+                  const preview = isLong && !expandDescription ? clean.slice(0, PREVIEW_CHARS) + '...' : clean;
+
+                  return (
+                    <div>
+                      <p className="text-gray-300 leading-relaxed text-sm whitespace-pre-line">{preview}</p>
+                      {isLong && (
+                        <button
+                          onClick={() => setExpandDescription(v => !v)}
+                          className="mt-3 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
+                        >
+                          {expandDescription ? '↑ Show Less' : '↓ Read Full Description'}
+                        </button>
+                      )}
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
             <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Left Column - Key Details & Amenities */}
               <div className="space-y-6">
@@ -713,13 +745,12 @@ export default function PropertyDetail() {
                         </div>
                       </div>
                     )}
-                    {property.min_sq_ft && (
+                    {/* Show area info from Alnair total stats */}
+                    {property.statistics?.total?.units_area_mt && (
                       <div>
-                        <p className="text-gray-500 text-xs mb-1">Size</p>
+                        <p className="text-gray-500 text-xs mb-1">Total Area</p>
                         <p className="text-white font-medium">
-                          {property.min_sq_ft.toLocaleString()}
-                          {property.max_sq_ft && property.max_sq_ft !== property.min_sq_ft && 
-                            ` - ${property.max_sq_ft.toLocaleString()}`} sq ft
+                          {Math.round(parseFloat(property.statistics.total.units_area_mt)).toLocaleString()} m²
                         </p>
                       </div>
                     )}
@@ -729,16 +760,13 @@ export default function PropertyDetail() {
                         <p className="text-white font-medium">{getUnitTypesDisplay()}</p>
                       </div>
                     )}
-                    {property.handover_year && (
+                    {/* Handover from construction_inspection_date */}
+                    {property.construction_inspection_date && (
                       <div>
                         <p className="text-gray-500 text-xs mb-1">Handover</p>
-                        <p className="text-white font-medium">{property.handover_year}</p>
-                      </div>
-                    )}
-                    {property.furnished && (
-                      <div>
-                        <p className="text-gray-500 text-xs mb-1">Furnishing</p>
-                        <p className="text-white font-medium">{property.furnished}</p>
+                        <p className="text-white font-medium">
+                          {new Date(property.construction_inspection_date).getFullYear()}
+                        </p>
                       </div>
                     )}
                     {property.category && (
@@ -747,10 +775,11 @@ export default function PropertyDetail() {
                         <p className="text-white font-medium">{property.category === 'Off_plan' ? 'Off Plan' : property.category}</p>
                       </div>
                     )}
-                    {(property.locality || property.address) && (
+                    {/* Location from district.title */}
+                    {(property.district?.title || property.locality || property.address) && (
                       <div>
                         <p className="text-gray-500 text-xs mb-1">Location</p>
-                        <p className="text-white font-medium">{property.locality || property.address}</p>
+                        <p className="text-white font-medium">{property.district?.title || property.locality || property.address}</p>
                       </div>
                     )}
                   </div>
