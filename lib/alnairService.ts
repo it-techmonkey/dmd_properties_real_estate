@@ -10,6 +10,7 @@ import type {
   ProjectSearchParams,
   ProjectMapMarker,
 } from './types/alnair';
+import { stripHtml } from './api';
 
 const ALNAIR_API_BASE = 'https://api.alnair.ae';
 const AUTH_TOKEN = process.env.ALNAIR_AUTH_TOKEN;
@@ -236,7 +237,7 @@ export function projectToMapMarker(project: Project): ProjectMapMarker {
 
 /**
  * Parse description for display
- * Handles 1000+ line descriptions with smart truncation
+ * Handles 1000+ line descriptions with smart truncation. Strips HTML first.
  */
 export function parseProjectDescription(
   description: string,
@@ -247,8 +248,10 @@ export function parseProjectDescription(
     return { text: '', isTruncated: false, fullText: '' };
   }
 
+  const plain = stripHtml(description);
+
   // Split by newlines or paragraphs
-  const paragraphs = description.split(/\n\n+|\r\n\r\n+/);
+  const paragraphs = plain.split(/\n\n+|\r\n\r\n+/);
   
   let truncatedText = '';
   let lineCount = 0;
@@ -259,7 +262,7 @@ export function parseProjectDescription(
       return {
         text: truncatedText.trim(),
         isTruncated: true,
-        fullText: description,
+        fullText: plain,
       };
     }
 
@@ -271,7 +274,7 @@ export function parseProjectDescription(
   return {
     text: truncatedText.trim(),
     isTruncated: false,
-    fullText: description,
+    fullText: plain,
   };
 }
 

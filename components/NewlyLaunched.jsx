@@ -116,7 +116,7 @@ export default function NewlyLaunched() {
       try {
         setLoading(true);
         setError(null);
-        const data = await fetchProjectsFromAlnair();
+        const data = await fetchProjectsFromAlnair({ onlyWithDescription: true });
         setProperties(data || []);
       } catch (err) {
         console.error('Error loading properties:', err);

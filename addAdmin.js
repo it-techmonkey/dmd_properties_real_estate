@@ -10,11 +10,11 @@ const bcrypt = require('bcryptjs');
 require('dotenv').config({ path: '.env.local' });
 
 // ============================================
-// EDIT THESE VALUES BEFORE RUNNING THE SCRIPT
+// Example admin account (created for live site)
 // ============================================
-const ADMIN_EMAIL = 'admin@example.com';
-const ADMIN_PASSWORD = 'password123';
-const ADMIN_NAME = 'Admin User';
+const ADMIN_EMAIL = 'admin@dmdproperties.com';
+const ADMIN_PASSWORD = 'DmdAdmin2025!';
+const ADMIN_NAME = 'DMD Example Admin';
 // ============================================
 
 async function addAdmin() {

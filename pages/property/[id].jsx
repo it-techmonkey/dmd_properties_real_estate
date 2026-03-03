@@ -669,32 +669,7 @@ export default function PropertyDetail() {
                   About This Project
                 </h3>
                 {(() => {
-                  const raw = property.description || '';
-
-                  // Utility: decode HTML entities (2 passes handles double-encoding like &amp;lt;)
-                  const decodeEntities = (str) => str
-                    .replace(/&amp;/g, '&')
-                    .replace(/&lt;/g, '<')
-                    .replace(/&gt;/g, '>')
-                    .replace(/&nbsp;/g, ' ')
-                    .replace(/&quot;/g, '"')
-                    .replace(/&#39;/g, "'")
-                    .replace(/&apos;/g, "'");
-
-                  // Step 1: Decode entities FIRST (must happen before tag stripping)
-                  const decoded = decodeEntities(decodeEntities(raw));
-
-                  // Step 2: Strip all HTML tags (now guaranteed to be real `<` brackets)
-                  const clean = decoded
-                    .replace(/<br\s*\/?>/gi, '\n')
-                    .replace(/<\/p>\s*/gi, '\n\n')
-                    .replace(/<\/h[1-6]>\s*/gi, '\n\n')
-                    .replace(/<\/li>\s*/gi, '\n')
-                    .replace(/<li[^>]*>/gi, '\u2022 ')
-                    .replace(/<[^>]+>/g, '')
-                    .replace(/\n{3,}/g, '\n\n')
-                    .trim();
-
+                  const clean = cleanText(property.description || '');
                   const PREVIEW_CHARS = 500;
                   const isLong = clean.length > PREVIEW_CHARS;
                   const preview = isLong && !expandDescription ? clean.slice(0, PREVIEW_CHARS) + '...' : clean;
